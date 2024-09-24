@@ -48,7 +48,6 @@ document.getElementById('utmForm').addEventListener('submit', function(event) {
     let utmSource = document.getElementById('utmSource').value;
     let utmMedium = document.getElementById('utmMedium').value;
     const utmCampaign = document.getElementById('utmCampaign').value;
-    const utmTerm = document.getElementById('utmTerm').value;
     const utmContent = document.getElementById('utmContent').value;
 
     // Replace source with mapped value if applicable
@@ -64,11 +63,7 @@ document.getElementById('utmForm').addEventListener('submit', function(event) {
     // Build the UTM string
     let utmString = `${websiteURL}?utm_source=${encodeURIComponent(utmSource)}&utm_medium=${encodeURIComponent(utmMedium)}&utm_campaign=${encodeURIComponent(utmCampaign)}`;
 
-    // Add optional term and content if provided
-    if (utmTerm) {
-        utmString += `&utm_term=${encodeURIComponent(utmTerm)}`;
-    }
-
+    // Add optional content if provided
     if (utmContent) {
         utmString += `&utm_content=${encodeURIComponent(utmContent)}`;
     }
