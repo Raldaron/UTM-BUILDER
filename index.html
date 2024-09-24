@@ -8,69 +8,78 @@
 </head>
 <body>
     <div class="container">
-        <h1>Simple UTM Builder</h1>
+        <h1>Simple UTM URL Builder</h1>
         <form id="utmForm">
+            <!-- Step 1: Website URL -->
             <div class="form-step" id="step1">
-                <label for="websiteURL">What is the Landing Page URL?</label>
-                <input type="text" id="websiteURL" name="websiteURL" placeholder="https://vensure.com" required>
+                <label for="websiteURL">What is the main website URL?</label>
+                <input type="text" id="websiteURL" name="websiteURL" placeholder="https://yourwebsite.com" required>
                 <button type="button" class="next-btn" onclick="goToStep(2)">Next</button>
             </div>
 
+            <!-- Step 2: UTM Source -->
             <div class="form-step" id="step2" style="display:none;">
-                <label for="utmSource">Where is the traffic coming from?</label>
+                <label for="utmSource">Where is the traffic coming from? (Source)</label>
                 <select id="utmSource" name="utmSource" required>
+                    <option value="billboard">Billboard</option>
                     <option value="bing">Bing</option>
-                    <option value="digital billboard or outdoor display">Digital Billboard or Digital Outdoor Display</option>
+                    <option value="digital billboard or outdoor display">Digital Billboard or Outdoor Display</option>
                     <option value="facebook">Facebook</option>
                     <option value="g2">G2</option>
                     <option value="google">Google</option>
                     <option value="instagram">Instagram</option>
                     <option value="linkedin">LinkedIn</option>
                     <option value="marketo">Marketo</option>
-                    <option value="billboard">Non-Digital Billboard</option>
+                    <option value="mntn">MNTN</option>
                     <option value="physical flyer">Physical Flyer</option>
+                    <option value="qr code on a physical banner">QR Code on a Physical Banner</option>
                     <option value="sponsored email sent by a 3rd party">Sponsored Email Sent by a 3rd Party</option>
+                    <option value="stackadapt">StackAdapt</option>
                     <option value="twitter">Twitter</option>
                     <option value="youtube">YouTube</option>
                 </select>
                 <button type="button" class="prev-btn" onclick="goToStep(1)">Back</button>
                 <button type="button" class="next-btn" onclick="goToStep(3)">Next</button>
-            </div>         
+            </div>
 
+            <!-- Step 3: UTM Medium -->
             <div class="form-step" id="step3" style="display:none;">
-                <label for="utmMedium">How did the traffic get here? (Medium)</label>
+                <label for="utmMedium">What is the medium? (Medium)</label>
                 <select id="utmMedium" name="utmMedium" required>
                     <option value="3rd party event">3rd Party Event</option>
                     <option value="email">Email</option>
-                    <option value="paid banner ads">Display Ads</option>
-                    <option value="video">Organic Video</option>
+                    <option value="image ads">Image Ads</option>
+                    <option value="paid banner ads">Paid Banner Ads</option>
                     <option value="paid social posts">Paid Social Posts</option>
-                    <option value="paid video ads">Video Ads</option>
+                    <option value="paid video ads">Paid Video Ads</option>
                     <option value="search ads">Search Ads</option>
-                    <option value="sponsorship">Sponsorship Placement</option>
+                    <option value="sponsorship">Sponsorship</option>
                     <option value="tradeshow">Tradeshow</option>
                     <option value="unpaid social posts">Unpaid Social Posts</option>
                     <option value="webinar">Webinar</option>
                 </select>
                 <button type="button" class="prev-btn" onclick="goToStep(2)">Back</button>
                 <button type="button" class="next-btn" onclick="goToStep(4)">Next</button>
-            </div>            
+            </div>
 
+            <!-- Step 4: UTM Campaign -->
             <div class="form-step" id="step4" style="display:none;">
                 <label for="utmCampaign">What is the campaign name? (Campaign)</label>
-                <input type="text" id="utmCampaign" name="utmCampaign" placeholder="e.g., 000-VES_Vensure-Voice" required>
+                <input type="text" id="utmCampaign" name="utmCampaign" placeholder="e.g., Summer Sale, Launch" required>
                 <button type="button" class="prev-btn" onclick="goToStep(3)">Back</button>
                 <button type="button" class="next-btn" onclick="goToStep(5)">Next</button>
             </div>
-            
+
+            <!-- Step 5: UTM Content (optional) -->
             <div class="form-step" id="step5" style="display:none;">
-                <label for="utmContent">Is there more than one link in your content? If so, which one is this for? (Optional)</label>
-                <input type="text" id="utmContent" name="utmContent" placeholder="e.g., Ad Banner 1, Footer, Header">
-                <button type="button" class="prev-btn" onclick="goToStep(5)">Back</button>
+                <label for="utmContent">What is the ad content or other content? (Content, optional)</label>
+                <input type="text" id="utmContent" name="utmContent" placeholder="e.g., Ad Banner 1, Sidebar Ad">
+                <button type="button" class="prev-btn" onclick="goToStep(4)">Back</button>
                 <button type="submit" class="submit-btn">Generate URL</button>
             </div>
         </form>
 
+        <!-- Result Display -->
         <div id="result" style="display:none;">
             <h2>Your Generated URL:</h2>
             <p id="generatedURL"></p>
