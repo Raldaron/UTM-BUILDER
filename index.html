@@ -58,21 +58,14 @@
 
             <div class="form-step" id="step4" style="display:none;">
                 <label for="utmCampaign">What is the campaign name? (Campaign)</label>
-                <input type="text" id="utmCampaign" name="utmCampaign" placeholder="e.g., Summer Sale, Launch" required>
+                <input type="text" id="utmCampaign" name="utmCampaign" placeholder="e.g., 000-VES_Vensure-Voice" required>
                 <button type="button" class="prev-btn" onclick="goToStep(3)">Back</button>
                 <button type="button" class="next-btn" onclick="goToStep(5)">Next</button>
             </div>
-
+            
             <div class="form-step" id="step5" style="display:none;">
-                <label for="utmTerm">What keyword or term do you want to track? (Term, optional)</label>
-                <input type="text" id="utmTerm" name="utmTerm" placeholder="e.g., Shoes, Digital Marketing">
-                <button type="button" class="prev-btn" onclick="goToStep(4)">Back</button>
-                <button type="button" class="next-btn" onclick="goToStep(6)">Next</button>
-            </div>
-
-            <div class="form-step" id="step6" style="display:none;">
-                <label for="utmContent">What is the ad content or other content? (Content, optional)</label>
-                <input type="text" id="utmContent" name="utmContent" placeholder="e.g., Ad Banner 1, Sidebar Ad">
+                <label for="utmContent">Is there more than one link in your content? If so, which one is this for? (Optional)</label>
+                <input type="text" id="utmContent" name="utmContent" placeholder="e.g., Ad Banner 1, Footer, Header">
                 <button type="button" class="prev-btn" onclick="goToStep(5)">Back</button>
                 <button type="submit" class="submit-btn">Generate URL</button>
             </div>
