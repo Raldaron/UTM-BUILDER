@@ -29,12 +29,10 @@
                     <option value="google">Google</option>
                     <option value="instagram">Instagram</option>
                     <option value="linkedin">LinkedIn</option>
-                    <option value="marketo">Marketo</option>
-                    <option value="mntn">MNTN</option>
+                    <option value="marketo">Email</option>
                     <option value="physical flyer">Physical Flyer</option>
                     <option value="qr code on a physical banner">QR Code on a Physical Banner</option>
                     <option value="sponsored email sent by a 3rd party">Sponsored Email Sent by a 3rd Party</option>
-                    <option value="stackadapt">StackAdapt</option>
                     <option value="twitter">Twitter</option>
                     <option value="youtube">YouTube</option>
                 </select>
@@ -44,14 +42,13 @@
 
             <!-- Step 3: UTM Medium -->
             <div class="form-step" id="step3" style="display:none;">
-                <label for="utmMedium">What is the medium? (Medium)</label>
+                <label for="utmMedium">How did the traffic get here?</label>
                 <select id="utmMedium" name="utmMedium" required>
                     <option value="3rd party event">3rd Party Event</option>
                     <option value="email">Email</option>
                     <option value="image ads">Image Ads</option>
-                    <option value="paid banner ads">Paid Banner Ads</option>
                     <option value="paid social posts">Paid Social Posts</option>
-                    <option value="paid video ads">Paid Video Ads</option>
+                    <option value="paid video ads">Video Ads</option>
                     <option value="search ads">Search Ads</option>
                     <option value="sponsorship">Sponsorship</option>
                     <option value="tradeshow">Tradeshow</option>
@@ -65,15 +62,15 @@
             <!-- Step 4: UTM Campaign -->
             <div class="form-step" id="step4" style="display:none;">
                 <label for="utmCampaign">What is the campaign name? (Campaign)</label>
-                <input type="text" id="utmCampaign" name="utmCampaign" placeholder="e.g., Summer Sale, Launch" required>
+                <input type="text" id="utmCampaign" name="utmCampaign" placeholder="e.g., 000-VES_Fall-Renewal" required>
                 <button type="button" class="prev-btn" onclick="goToStep(3)">Back</button>
                 <button type="button" class="next-btn" onclick="goToStep(5)">Next</button>
             </div>
 
             <!-- Step 5: UTM Content (optional) -->
             <div class="form-step" id="step5" style="display:none;">
-                <label for="utmContent">What is the ad content or other content? (Content, optional)</label>
-                <input type="text" id="utmContent" name="utmContent" placeholder="e.g., Ad Banner 1, Sidebar Ad">
+                <label for="utmContent">Is there more than 1 link in this piece of content? If so, which one is this for?</label>
+                <input type="text" id="utmContent" name="utmContent" placeholder="e.g., Ad Banner 1, Header, Footer">
                 <button type="button" class="prev-btn" onclick="goToStep(4)">Back</button>
                 <button type="submit" class="submit-btn">Generate URL</button>
             </div>
