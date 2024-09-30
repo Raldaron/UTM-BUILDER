@@ -21,7 +21,8 @@ const mediumMapping = {
 const encouragements = [
     "Way To Go!",
     "Keep Going. You Can Do it!",
-    "Great Job! You Made a UTM All By Yourself! YAY!"
+    "Great Job! You're Making a UTM All By Yourself! YAY!",
+    "Don't Give Up - Believe In Yourself!"
 ];
 
 // Function to ensure the websiteURL starts with "https://" and ends with "/"
