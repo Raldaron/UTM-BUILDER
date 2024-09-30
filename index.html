@@ -14,7 +14,7 @@
             <div class="form-step" id="step1">
                 <label for="websiteURL">What is the main website URL?</label>
                 <input type="text" id="websiteURL" name="websiteURL" placeholder="https://yourwebsite.com" required>
-                <button type="button" class="next-btn" onclick="goToStep(2)">Next</button>
+                <button type="button" class="next-btn">Next</button>
             </div>
 
             <!-- Step 2: UTM Source -->
@@ -36,8 +36,8 @@
                     <option value="twitter">Twitter</option>
                     <option value="youtube">YouTube</option>
                 </select>
-                <button type="button" class="prev-btn" onclick="goToStep(1)">Back</button>
-                <button type="button" class="next-btn" onclick="goToStep(3)">Next</button>
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
             </div>
 
             <!-- Step 3: UTM Medium -->
@@ -55,24 +55,24 @@
                     <option value="unpaid social posts">Unpaid Social Posts</option>
                     <option value="webinar">Webinar</option>
                 </select>
-                <button type="button" class="prev-btn" onclick="goToStep(2)">Back</button>
-                <button type="button" class="next-btn" onclick="goToStep(4)">Next</button>
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
             </div>
 
             <!-- Step 4: UTM Campaign -->
             <div class="form-step" id="step4" style="display:none;">
                 <label for="utmCampaign">What is the campaign name? (Campaign)</label>
                 <input type="text" id="utmCampaign" name="utmCampaign" placeholder="e.g., 000-VES_Fall-Renewal" required>
-                <button type="button" class="prev-btn" onclick="goToStep(3)">Back</button>
-                <button type="button" class="next-btn" onclick="goToStep(5)">Next</button>
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
             </div>
 
             <!-- Step 5: UTM Content (optional) -->
             <div class="form-step" id="step5" style="display:none;">
                 <label for="utmContent">Is there more than 1 link in this piece of content? If so, which one is this for?</label>
                 <input type="text" id="utmContent" name="utmContent" placeholder="e.g., Ad Banner 1, Header, Footer">
-                <button type="button" class="prev-btn" onclick="goToStep(4)">Back</button>
-                <button type="submit" class="submit-btn">Generate URL</button>
+                <button type="button" class="prev-btn">Back</button>
+                <button type="submit" class="generate-btn">Generate URL</button>
             </div>
         </form>
 
@@ -80,7 +80,13 @@
         <div id="result" style="display:none;">
             <h2>Your Generated URL:</h2>
             <p id="generatedURL"></p>
-            <button onclick="startOver()">Start Over</button>
+            <button class="start-over-btn">Start Over</button>
+        </div>
+
+        <!-- Panda Animation Container -->
+        <div id="pandaContainer" class="panda-container">
+            <div id="speechBubble" class="speech-bubble"></div>
+            <img id="pandaImage" class="panda-image" src="panda.png" alt="Animated Panda">
         </div>
     </div>
 

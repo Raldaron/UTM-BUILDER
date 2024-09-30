@@ -17,14 +17,12 @@ const mediumMapping = {
     "3rd party event": "partnership"
 };
 
-// Function to move between steps
-function goToStep(step) {
-    let steps = document.getElementsByClassName('form-step');
-    for (let i = 0; i < steps.length; i++) {
-        steps[i].style.display = 'none';
-    }
-    document.getElementById('step' + step).style.display = 'block';
-}
+// Encouraging messages for the panda
+const encouragements = [
+    "Way To Go!",
+    "Keep Going. You Can Do it!",
+    "Great Job! You Made a UTM All By Yourself! YAY!"
+];
 
 // Function to ensure the websiteURL starts with "https://" and ends with "/"
 function formatWebsiteURL(url) {
@@ -37,8 +35,42 @@ function formatWebsiteURL(url) {
     return url;
 }
 
+// Function to show the animated panda
+function showPanda() {
+    const pandaContainer = document.getElementById('pandaContainer');
+    const speechBubble = document.getElementById('speechBubble');
+    const randomMessage = encouragements[Math.floor(Math.random() * encouragements.length)];
+    
+    speechBubble.textContent = randomMessage;
+    pandaContainer.style.display = 'flex';
+    setTimeout(() => {
+        pandaContainer.classList.add('show');
+    }, 50);
+
+    setTimeout(() => {
+        pandaContainer.classList.remove('show');
+        setTimeout(() => {
+            pandaContainer.style.display = 'none';
+        }, 500);
+    }, 3000);
+}
+
+// Function to move between steps
+function goToStep(step) {
+    let steps = document.getElementsByClassName('form-step');
+    for (let i = 0; i < steps.length; i++) {
+        steps[i].style.display = 'none';
+    }
+    document.getElementById('step' + step).style.display = 'block';
+    
+    // Show panda animation when moving to the next step (except for the first step)
+    if (step > 1) {
+        showPanda();
+    }
+}
+
 // Function to handle form submission and generate UTM URL
-document.getElementById('utmForm').addEventListener('submit', function(event) {
+function handleSubmit(event) {
     event.preventDefault();
     
     // Ensure website URL starts with "https://" and ends with "/"
@@ -51,13 +83,13 @@ document.getElementById('utmForm').addEventListener('submit', function(event) {
     const utmContent = document.getElementById('utmContent').value;
 
     // Replace source with mapped value if applicable
-    if (sourceMapping[utmSource]) {
-        utmSource = sourceMapping[utmSource];
+    if (sourceMapping[utmSource.toLowerCase()]) {
+        utmSource = sourceMapping[utmSource.toLowerCase()];
     }
 
     // Replace medium with mapped value if applicable
-    if (mediumMapping[utmMedium]) {
-        utmMedium = mediumMapping[utmMedium];
+    if (mediumMapping[utmMedium.toLowerCase()]) {
+        utmMedium = mediumMapping[utmMedium.toLowerCase()];
     }
 
     // Build the UTM string
@@ -72,7 +104,10 @@ document.getElementById('utmForm').addEventListener('submit', function(event) {
     document.getElementById('generatedURL').textContent = utmString;
     document.getElementById('utmForm').style.display = 'none';
     document.getElementById('result').style.display = 'block';
-});
+    
+    // Show panda animation when form is submitted
+    showPanda();
+}
 
 // Function to start over
 function startOver() {
@@ -81,3 +116,37 @@ function startOver() {
     document.getElementById('utmForm').reset();
     goToStep(1);
 }
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener for form submission
+    document.getElementById('utmForm').addEventListener('submit', handleSubmit);
+
+    // Add event listeners for navigation buttons
+    const nextButtons = document.querySelectorAll('.next-btn');
+    const backButtons = document.querySelectorAll('.prev-btn');
+    const generateButton = document.querySelector('.generate-btn');
+    const startOverButton = document.querySelector('.start-over-btn');
+
+    nextButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const currentStep = parseInt(this.closest('.form-step').id.replace('step', ''));
+            goToStep(currentStep + 1);
+        });
+    });
+
+    backButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const currentStep = parseInt(this.closest('.form-step').id.replace('step', ''));
+            goToStep(currentStep - 1);
+        });
+    });
+
+    if (generateButton) {
+        generateButton.addEventListener('click', handleSubmit);
+    }
+
+    if (startOverButton) {
+        startOverButton.addEventListener('click', startOver);
+    }
+});

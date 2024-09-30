@@ -125,3 +125,78 @@ button:disabled:hover {
         opacity: 1;
     }
 }
+
+/* Panda and speech bubble styles */
+/* ... (previous styles remain the same) ... */
+
+/* Panda and speech bubble styles */
+.panda-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.speech-bubble {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    max-width: 300px;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 24px;
+    color: #0073aa;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.panda-wrapper {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.panda-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.panda-container.show .speech-bubble,
+.panda-container.show .panda-wrapper {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@keyframes pandaWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+.panda-container.show .panda-wrapper {
+    animation: pandaWiggle 2s infinite;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .panda-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .speech-bubble {
+        font-size: 18px;
+        max-width: 200px;
+        padding: 15px;
+    }
+}
