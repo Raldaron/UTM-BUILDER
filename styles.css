@@ -1,6 +1,6 @@
 /* General body and container styles */
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', sans-serif;
     background-color: #f0f4f7; /* Soft blue-gray background */
     margin: 0;
     padding: 0;
@@ -148,7 +148,7 @@ button:disabled:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     max-width: 300px;
     text-align: center;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', sans-serif;
     font-size: 24px;
     color: #0073aa;
     opacity: 0;
