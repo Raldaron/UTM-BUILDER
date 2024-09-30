@@ -47,7 +47,7 @@ input[type="text"], select {
     color: #333;
     box-shadow: inset 3px 3px 0 #0073aa;
     outline: none;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', sans-serif;
 }
 
 input[type="text"]:focus, select:focus {
@@ -63,7 +63,7 @@ button {
     border-radius: 15px;
     cursor: pointer;
     font-size: 24px;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', sans-serif;
     box-shadow: 3px 3px 0 #e7694a; /* Orange crayon-like shadow */
     text-shadow: 2px 2px 0 #0073aa;
     transition: all 0.3s ease;
@@ -106,7 +106,7 @@ button:disabled:hover {
     border: 5px dashed #0073aa;
     color: #0073aa;
     font-size: 20px;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', sans-serif;
     box-shadow: inset 3px 3px 0 #50b5c1;
 }
 
