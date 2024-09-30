@@ -25,6 +25,9 @@ const encouragements = [
     "Don't Give Up - Believe In Yourself!"
 ];
 
+// Specific message for back button
+const backButtonMessage = "It's ok that you made a mistake. That's why there's a back button! Keep Going!";
+
 // Function to ensure the websiteURL starts with "https://" and ends with "/"
 function formatWebsiteURL(url) {
     if (!url.startsWith("https://")) {
@@ -37,12 +40,12 @@ function formatWebsiteURL(url) {
 }
 
 // Function to show the animated panda
-function showPanda() {
+function showPanda(customMessage = null) {
     const pandaContainer = document.getElementById('pandaContainer');
     const speechBubble = document.getElementById('speechBubble');
-    const randomMessage = encouragements[Math.floor(Math.random() * encouragements.length)];
+    const message = customMessage || encouragements[Math.floor(Math.random() * encouragements.length)];
     
-    speechBubble.textContent = randomMessage;
+    speechBubble.textContent = message;
     pandaContainer.style.display = 'flex';
     setTimeout(() => {
         pandaContainer.classList.add('show');
@@ -140,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const currentStep = parseInt(this.closest('.form-step').id.replace('step', ''));
             goToStep(currentStep - 1);
+            showPanda(backButtonMessage); // Show panda with back button message
         });
     });
 
