@@ -3,93 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UTM String Builder</title>
+    <title>Simple UTM URL Builder</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-fireworks@2.9.3/tsparticles.preset.fireworks.min.js"></script>
+
 </head>
 <body>
     <div class="container">
         <h1>Simple UTM URL Builder</h1>
+        
         <form id="utmForm">
-            <!-- Step 1: Website URL -->
-            <div class="form-step" id="step1">
+            <div id="step1" class="form-step">
                 <label for="websiteURL">What is the main website URL?</label>
-                <input type="text" id="websiteURL" name="websiteURL" placeholder="https://yourwebsite.com" required>
+                <input type="text" id="websiteURL" required>
                 <button type="button" class="next-btn">Next</button>
             </div>
 
-            <!-- Step 2: UTM Source -->
-            <div class="form-step" id="step2" style="display:none;">
+            <div id="step2" class="form-step" style="display:none;">
                 <label for="utmSource">Where is the traffic coming from? (Source)</label>
-                <select id="utmSource" name="utmSource" required>
-                    <option value="billboard">Billboard</option>
-                    <option value="bing">Bing</option>
-                    <option value="digital billboard or outdoor display">Digital Billboard or Outdoor Display</option>
-                    <option value="facebook">Facebook</option>
-                    <option value="g2">G2</option>
-                    <option value="google">Google</option>
-                    <option value="instagram">Instagram</option>
-                    <option value="linkedin">LinkedIn</option>
-                    <option value="marketo">Email</option>
-                    <option value="physical flyer">Physical Flyer</option>
-                    <option value="qr code on a physical banner">QR Code on a Physical Banner</option>
-                    <option value="sponsored email sent by a 3rd party">Sponsored Email Sent by a 3rd Party</option>
-                    <option value="twitter">Twitter</option>
-                    <option value="youtube">YouTube</option>
+                <select id="utmSource" required>
+                    <option value="Billboard">Billboard</option>
+                    <option value="Bing">Bing</option>
+                    <option value="Digital Billboard or Outdoor Display">Digital Billboard or Outdoor Display</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="G2">G2</option>
+                    <option value="Google">Google</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Email">Email</option>
+                    <option value="Physical Flyer">Physical Flyer</option>
+                    <option value="QR Code on a Physical Banner">QR Code on a Physical Banner</option>
+                    <option value="Sponsored Email Sent by a 3rd Party">Sponsored Email Sent by a 3rd Party</option>
+                    <option value="Twitter">Twitter</option>
+                    <option value="YouTube">YouTube</option>
                 </select>
                 <button type="button" class="prev-btn">Back</button>
                 <button type="button" class="next-btn">Next</button>
             </div>
 
-            <!-- Step 3: UTM Medium -->
-            <div class="form-step" id="step3" style="display:none;">
+            <div id="step3" class="form-step" style="display:none;">
                 <label for="utmMedium">How did the traffic get here?</label>
-                <select id="utmMedium" name="utmMedium" required>
-                    <option value="3rd party event">3rd Party Event</option>
-                    <option value="email">Email</option>
-                    <option value="image ads">Image Ads</option>
-                    <option value="paid social posts">Paid Social Posts</option>
-                    <option value="paid video ads">Video Ads</option>
-                    <option value="search ads">Search Ads</option>
-                    <option value="sponsorship">Sponsorship</option>
-                    <option value="tradeshow">Tradeshow</option>
-                    <option value="unpaid social posts">Unpaid Social Posts</option>
-                    <option value="webinar">Webinar</option>
+                <select id="utmMedium" required>
+                    <option value="3rd Party Event">3rd Party Event</option>
+                    <option value="Email">Email</option>
+                    <option value="Image Ads">Image Ads</option>
+                    <option value="Paid Social Posts">Paid Social Posts</option>
+                    <option value="Video Ads">Video Ads</option>
+                    <option value="Search Ads">Search Ads</option>
+                    <option value="Sponsorship">Sponsorship</option>
+                    <option value="Tradeshow">Tradeshow</option>
+                    <option value="Unpaid Social Posts">Unpaid Social Posts</option>
+                    <option value="Webinar">Webinar</option>
                 </select>
                 <button type="button" class="prev-btn">Back</button>
                 <button type="button" class="next-btn">Next</button>
             </div>
 
-            <!-- Step 4: UTM Campaign -->
-            <div class="form-step" id="step4" style="display:none;">
+            <div id="step4" class="form-step" style="display:none;">
                 <label for="utmCampaign">What is the campaign name? (Campaign)</label>
-                <input type="text" id="utmCampaign" name="utmCampaign" placeholder="e.g., 000-VES_Fall-Renewal" required>
+                <input type="text" id="utmCampaign" required>
                 <button type="button" class="prev-btn">Back</button>
                 <button type="button" class="next-btn">Next</button>
             </div>
 
-            <!-- Step 5: UTM Content (optional) -->
-            <div class="form-step" id="step5" style="display:none;">
+            <div id="step5" class="form-step" style="display:none;">
                 <label for="utmContent">Is there more than 1 link in this piece of content? If so, which one is this for?</label>
-                <input type="text" id="utmContent" name="utmContent" placeholder="e.g., Ad Banner 1, Header, Footer">
+                <input type="text" id="utmContent">
                 <button type="button" class="prev-btn">Back</button>
-                <button type="submit" class="generate-btn">Generate URL</button>
+                <button type="button" class="generate-btn">Generate URL</button>
             </div>
         </form>
 
-        <!-- Result Display -->
         <div id="result" style="display:none;">
             <h2>Your Generated URL:</h2>
             <p id="generatedURL"></p>
-            <button class="start-over-btn">Start Over</button>
+            <button type="button" class="start-over-btn">Start Over</button>
         </div>
+    </div>
 
-        <!-- Panda Animation Container -->
-        <div id="pandaContainer" class="panda-container">
-            <div id="speechBubble" class="speech-bubble"></div>
-            <img id="pandaImage" class="panda-image" src="panda.png" alt="Animated Panda">
+    <div id="fireworks"></div>
+
+    <div id="pandaContainer" class="panda-container">
+        <div id="speechBubble" class="speech-bubble"></div>
+        <div class="panda-wrapper">
+            <img src="panda.png" alt="Animated Panda" id="pandaImage" class="panda-image">
         </div>
     </div>
 
     <script src="script.js"></script>
+
+    <form id="googleForm" action="https://docs.google.com/forms/d/e/11zBFh23TlPw0U_bFl6hkT_eNKss7Caere-pvsG7gqnM/formResponse" method="POST" target="hidden_iframe" style="display:none;">
+        <input type="text" name="entry.959683567" id="utmInput">
+    </form>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
 </body>
 </html>
