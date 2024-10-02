@@ -53,7 +53,10 @@ function showPanda(messagesArray) {
     const speechBubble = document.getElementById('speechBubble');
     
     const messages = messagesArray || encouragements;
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    const randomIndex = getRandomInt(messages.length);
+    const randomMessage = messages[randomIndex];
+    console.log('Random Index:', randomIndex);
+    console.log('Random Message:', randomMessage);
     speechBubble.textContent = randomMessage;
     
     pandaContainer.style.display = 'flex';
@@ -67,6 +70,10 @@ function showPanda(messagesArray) {
             pandaContainer.style.display = 'none';
         }, 500);
     }, 3000);
+}
+
+function getRandomInt(max) {
+    return Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xFFFFFFFF + 1) * max);
 }
 
 // Function to start over
