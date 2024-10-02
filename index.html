@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple UTM URL Builder</title>
+    <title>My First UTM Builder</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-fireworks@2.9.3/tsparticles.preset.fireworks.min.js"></script>
@@ -26,7 +26,7 @@
   
         <!-- Step 1: Main Website URL -->
         <div id="step1" class="form-step" style="display: none;">
-          <label for="websiteURL">What is the main website URL?</label>
+          <label for="websiteURL">What landing page do you plan to use?</label>
           <input type="text" id="websiteURL" required />
           <button type="button" class="prev-btn">Back</button>
           <button type="button" class="next-btn">Next</button>
@@ -76,7 +76,7 @@
   
         <!-- Step 4: UTM Campaign -->
         <div id="step4" class="form-step" style="display: none;">
-          <label for="utmCampaign">What is the campaign name? (Campaign)</label>
+          <label for="utmCampaign">What is the ID of the Salesforce Campaign you're using? (This can be found in the Salesforce Campaign's url, represented here by "*" <br> vensure1.lightning.force.com/lightning/r/campaign/******************/view) </br></label>
           <input type="text" id="utmCampaign" required />
           <button type="button" class="prev-btn">Back</button>
           <button type="button" class="next-btn">Next</button>
