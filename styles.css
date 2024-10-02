@@ -51,6 +51,10 @@ label {
     max-width: 100%;
 }
 
+.form-step label {
+    max-width: 100%;
+}
+
 /* Style for the URL example within the label */
 .url-example {
     display: block;
