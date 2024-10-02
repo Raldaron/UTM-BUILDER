@@ -13,75 +13,86 @@ body {
     background-color: #f0f4f7;
     color: #333;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
 }
 
+/* Container */
 .container {
-    max-width: 700px;
+    max-width: 90%;
     margin: 50px auto;
     background-color: #fff;
-    padding: 30px;
-    border: 8px dashed #0073aa;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 2em;
+    border: 0.5em dashed #0073aa;
+    border-radius: 1em;
+    box-shadow: 0.3em 0.3em 0.6em rgba(0, 0, 0, 0.2);
     background-image: url('crayon-background.png');
+    background-size: cover;
 }
 
 /* Typography */
 h1 {
     text-align: center;
-    color: #e7694a;
-    font-size: 48px;
-    text-shadow: 3px 3px 0 #0073aa;
-    margin-bottom: 30px;
+    color: #0073aa;
+    font-size: 3rem;
+    text-shadow: 0.1em 0.05em 0 #e7694a;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #0073aa;
-    text-shadow: 2px 2px 0 #f0f4f7;
+    text-shadow: 0.1em 0.1em 0 #f0f4f7;
 }
 
 /* Form elements */
-input[type="text"], select {
+input[type="text"],
+input[type="email"],
+select {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 4px solid #50b5c1;
-    border-radius: 10px;
+    padding: 0.75em;
+    margin-bottom: 1em;
+    border: 0.25em solid #50b5c1;
+    border-radius: 0.5em;
     background-color: #e8f1f5;
-    font-size: 22px;
+    font-size: 1.25rem;
     color: #333;
-    box-shadow: inset 3px 3px 0 #0073aa;
+    box-shadow: inset 0.2em 0.2em 0 #0073aa;
     outline: none;
-    font-family: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    font-family: inherit;
 }
 
-input[type="text"]:focus, select:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
     border-color: #e7694a;
 }
 
 button {
-    padding: 15px 25px;
+    padding: 0.75em 1.5em;
     background-color: #0073aa;
     color: #fff;
-    border: 4px solid #50b5c1;
-    border-radius: 15px;
+    border: 0.25em solid #50b5c1;
+    border-radius: 0.75em;
     cursor: pointer;
-    font-size: 24px;
-    font-family: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
-    box-shadow: 3px 3px 0 #e7694a;
-    text-shadow: 2px 2px 0 #0073aa;
+    font-size: 1.5rem;
+    font-family: inherit;
+    box-shadow: 0.2em 0.2em 0 #e7694a;
+    text-shadow: 0.1em 0.1em 0 #0073aa;
     transition: all 0.3s ease;
+    margin: 0.5em 0.25em;
 }
 
 button:hover {
     background-color: #50b5c1;
-    box-shadow: 3px 3px 0 #0073aa;
+    box-shadow: 0.2em 0.2em 0 #0073aa;
 }
 
 button.prev-btn {
@@ -104,32 +115,17 @@ button:disabled:hover {
     background-color: #ddd;
 }
 
-/* Result area */
-#result {
-    text-align: center;
-    margin-top: 30px;
-}
-
-#generatedURL {
-    word-wrap: break-word;
-    background-color: #e0f7fa;
-    padding: 20px;
-    border-radius: 15px;
-    border: 5px dashed #0073aa;
-    color: #0073aa;
-    font-size: 20px;
-    font-family: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
-    box-shadow: inset 3px 3px 0 #50b5c1;
-}
-
-/* Form steps animation */
+/* Form Steps */
 .form-step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     animation: pop-in 0.5s ease;
 }
 
 @keyframes pop-in {
     0% {
-        transform: scale(0.9);
+        transform: scale(0.95);
         opacity: 0;
     }
     100% {
@@ -138,41 +134,61 @@ button:disabled:hover {
     }
 }
 
+/* Result area */
+#result {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+#generatedURL {
+    word-wrap: break-word;
+    background-color: #e0f7fa;
+    padding: 1em;
+    border-radius: 0.75em;
+    border: 0.3em dashed #0073aa;
+    color: #0073aa;
+    font-size: 1.25rem;
+    font-family: inherit;
+    box-shadow: inset 0.2em 0.2em 0 #50b5c1;
+}
+
 /* Panda and speech bubble styles */
 .panda-container {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1em;
+    right: 1em;
     display: none;
     flex-direction: column;
     align-items: center;
     z-index: 1000;
     transition: transform 0.5s ease-out;
+    max-width: 90%;
 }
 
 .panda-container.show {
-    transform: translateY(-20px);
+    transform: translateY(-1em);
 }
 
 .speech-bubble {
     background: white;
-    padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    max-width: 300px;
+    padding: 1em;
+    border-radius: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
+    max-width: 20em;
     text-align: center;
-    font-family: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
-    font-size: 24px;
+    font-family: inherit;
+    font-size: 1.5rem;
     color: #0073aa;
     opacity: 0;
     transform: scale(0);
     transition: opacity 0.5s, transform 0.5s;
+    word-wrap: break-word;
 }
 
 .panda-wrapper {
-    width: 300px;
-    height: 300px;
+    width: 15em;
+    height: 15em;
     overflow: hidden;
     opacity: 0;
     transform: scale(0);
@@ -213,44 +229,81 @@ button:disabled:hover {
     display: none;
 }
 
+/* Consent Label */
+.consent-label {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.consent-label input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .container {
         margin: 20px auto;
-        padding: 20px;
+        padding: 1.5em;
     }
 
     h1 {
-        font-size: 36px;
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
     }
 
     label {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
-    input[type="text"], select, button {
-        font-size: 18px;
+    input[type="text"],
+    input[type="email"],
+    select,
+    button {
+        font-size: 1.125rem;
     }
 
     .panda-wrapper {
-        width: 200px;
-        height: 200px;
+        width: 12em;
+        height: 12em;
     }
 
     .speech-bubble {
-        font-size: 18px;
-        max-width: 200px;
-        padding: 15px;
+        font-size: 1.25rem;
+        max-width: 16em;
+        padding: 0.75em;
     }
 }
 
-.consent-label {
-    display: block;
-    margin-top: 10px;
-    font-size: 10px;
-    color: #333;
-}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
 
-.consent-label input[type="checkbox"] {
-    margin-right: 10px;
+    label {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    button {
+        font-size: 1rem;
+    }
+
+    .panda-wrapper {
+        width: 10em;
+        height: 10em;
+    }
+
+    .speech-bubble {
+        font-size: 1rem;
+        max-width: 14em;
+        padding: 0.5em;
+    }
 }
