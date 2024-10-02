@@ -243,3 +243,14 @@ button:disabled:hover {
         padding: 15px;
     }
 }
+
+.consent-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 10px;
+    color: #333;
+}
+
+.consent-label input[type="checkbox"] {
+    margin-right: 10px;
+}

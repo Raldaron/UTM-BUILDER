@@ -13,15 +13,27 @@ const mediumMapping = {
     "image ads": "display",
     "unpaid social posts": "organic-social",
     "paid social posts": "paid-social",
-    "paid video ads": "video",
+    "video ads": "video",
     "3rd party event": "partnership"
 };
 
 // Encouraging messages for the panda
 const encouragements = [
-    "Way To Go!",
-    "Keep Going. You Can Do it!",
-    "Great Job! You Made a UTM All By Yourself! YAY!"
+    "Way to go!",
+    "Keep going, you can do it!",
+    "Great job! You're making a UTM all by yourself! Yay!",
+    "You're almost there!",
+    "Wow! You're doing great!",
+    "And they said you couldn't do it... Look at you go! Good job proving them wrong!"
+];
+
+// Messages for the panda when pressing back
+const backButtonMessages = [
+    "Backstreet's back; ALRIGHT!",
+    "No worries, mistakes happen!",
+    "Backtracking is part of the journey!",
+    "Well, well, well... Look who made a mistake. Don't worry, I won't tell. Promise.",
+    "Oh no! You made a mistake, but that's okay! That's why there's a back button!"
 ];
 
 // Function to ensure the websiteURL starts with "https://" and ends with "/"
@@ -36,12 +48,14 @@ function formatWebsiteURL(url) {
 }
 
 // Function to show the animated panda
-function showPanda() {
+function showPanda(messagesArray) {
     const pandaContainer = document.getElementById('pandaContainer');
     const speechBubble = document.getElementById('speechBubble');
-    const randomMessage = encouragements[Math.floor(Math.random() * encouragements.length)];
     
+    const messages = messagesArray || encouragements;
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     speechBubble.textContent = randomMessage;
+    
     pandaContainer.style.display = 'flex';
     setTimeout(() => {
         pandaContainer.classList.add('show');
@@ -60,17 +74,18 @@ function startOver() {
     document.getElementById('utmForm').style.display = 'block';
     document.getElementById('result').style.display = 'none';
     document.getElementById('utmForm').reset();
-    goToStep(1);
+    goToStep(0);
 }
 
-function goToStep(step) {
+// Function to navigate between steps
+function goToStep(step, showPandaFlag = true) {
     let steps = document.getElementsByClassName('form-step');
     for (let i = 0; i < steps.length; i++) {
         steps[i].style.display = 'none';
     }
     document.getElementById('step' + step).style.display = 'block';
-    
-    if (step > 1) {
+
+    if (showPandaFlag && step > 0) {
         showPanda();
     }
 }
@@ -90,6 +105,7 @@ async function startFireworks() {
     });
 }
 
+// Function to display fireworks
 async function showFireworks() {
     const fireworksContainer = document.getElementById('fireworks');
     fireworksContainer.style.display = 'block';
@@ -114,6 +130,8 @@ async function showFireworks() {
 
 // Function to handle form submission and generate UTM URL
 async function generateUTM() {
+    const userEmail = document.getElementById('userEmail').value.trim();
+
     let websiteURL = document.getElementById('websiteURL').value.trim();
     websiteURL = formatWebsiteURL(websiteURL);
 
@@ -138,32 +156,28 @@ async function generateUTM() {
     document.getElementById('generatedURL').textContent = utmString;
     document.getElementById('utmForm').style.display = 'none';
     document.getElementById('result').style.display = 'block';
-    // Set the UTM value in the hidden form
-    document.getElementById('utmInput').value = utmString;
-    // Submit the hidden form
-    document.getElementById('googleForm').submit();
-    
+
     showPanda();
     await showFireworks();
 
     // Prepare form data
     const formData = new FormData();
-    formData.append('entry.959683567', utmString); // Using your actual entry ID
+    formData.append('entry.959683567', utmString); // UTM entry ID
+    formData.append('entry.1080429257', userEmail); // Email entry ID
 
     // Submit the form data
-    fetch('https://docs.google.com/forms/d/e/11zBFh23TlPw0U_bFl6hkT_eNKss7Caere-pvsG7gqnM/formResponse', {
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSfx0wHXDfgtadXe7C-FIObVADGmLZumwcLrjKKZDmBl0G2JnQ/formResponse', {
         method: 'POST',
         mode: 'no-cors',
         body: formData
     })
     .then(() => {
-        console.log('UTM data submitted to Google Form');
+        console.log('UTM data and email submitted to Google Form');
     })
     .catch((error) => {
-        console.error('Error submitting UTM to Google Form:', error);
+        console.error('Error submitting data to Google Form:', error);
     });
 }
-
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function() {
@@ -178,6 +192,23 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(event) {
             event.preventDefault();
             const currentStep = parseInt(this.closest('.form-step').id.replace('step', ''));
+
+            // Validate consent checkbox and email at step 0
+            if (currentStep === 0) {
+                const consentGiven = document.getElementById('consentCheckbox').checked;
+                if (!consentGiven) {
+                    alert('Please agree to the collection and processing of your email address.');
+                    return;
+                }
+
+                // Validate email input
+                const userEmail = document.getElementById('userEmail').value.trim();
+                if (!userEmail) {
+                    alert('Please enter your email address.');
+                    return;
+                }
+            }
+
             goToStep(currentStep + 1);
         });
     });
@@ -186,7 +217,10 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(event) {
             event.preventDefault();
             const currentStep = parseInt(this.closest('.form-step').id.replace('step', ''));
-            goToStep(currentStep - 1);
+            goToStep(currentStep - 1, false); // Do not show the default panda message
+    
+            // Show the panda with a random message from backButtonMessages
+            showPanda(backButtonMessages);
         });
     });
 
@@ -201,8 +235,6 @@ document.addEventListener('DOMContentLoaded', function() {
         startOverButton.addEventListener('click', startOver);
     }
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        generateUTM();
-    });
+    // Start at step 0
+    goToStep(0);
 });
