@@ -307,3 +307,20 @@ button:disabled:hover {
         padding: 0.5em;
     }
 }
+
+/* Style for additional instructions */
+.instruction {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+/* Style for the URL example */
+.url-example {
+    font-size: 0.9rem;
+    color: #555;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    margin-bottom: 1em;
+}
