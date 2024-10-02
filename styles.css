@@ -43,13 +43,23 @@ h2 {
     margin-bottom: 1em;
 }
 
+/* Ensure labels wrap long words or URLs */
 label {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+}
+
+/* Style for the URL example within the label */
+.url-example {
     display: block;
-    margin-bottom: 0.5em;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #0073aa;
-    text-shadow: 0.1em 0.1em 0 #f0f4f7;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #555;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Form elements */
