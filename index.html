@@ -75,12 +75,19 @@
         </div>
   
         <!-- Step 4: UTM Campaign -->
-        <div id="step4" class="form-step" style="display: none;">
-          <label for="utmCampaign">What is the ID of the Salesforce Campaign you're using? (This can be found in the Salesforce Campaign's url, represented here by "*" <br> vensure1.lightning.force.com/lightning/r/campaign/******************/view) </br></label>
-          <input type="text" id="utmCampaign" required />
-          <button type="button" class="prev-btn">Back</button>
-          <button type="button" class="next-btn">Next</button>
-        </div>
+<div id="step4" class="form-step" style="display: none;">
+  <label for="utmCampaign">
+    What is the ID of the Salesforce Campaign you're using? (This can be found in the Salesforce Campaign's URL, represented here by "*"):
+    <br>
+    <span class="url-example">
+      vensure1.lightning.force.com/lightning/r/campaign/******************/view
+    </span>
+  </label>
+  <input type="text" id="utmCampaign" required />
+  <button type="button" class="prev-btn">Back</button>
+  <button type="button" class="next-btn">Next</button>
+</div>
+
   
         <!-- Step 5: UTM Content -->
         <div id="step5" class="form-step" style="display: none;">
