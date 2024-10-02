@@ -47,17 +47,34 @@ function formatWebsiteURL(url) {
     return url;
 }
 
+// Function to disable all buttons
+function disableButtons() {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.disabled = true;
+    });
+}
+
+// Function to enable all buttons
+function enableButtons() {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.disabled = false;
+    });
+}
+
 // Function to show the animated panda
 function showPanda(messagesArray) {
     const pandaContainer = document.getElementById('pandaContainer');
     const speechBubble = document.getElementById('speechBubble');
     
     const messages = messagesArray || encouragements;
-    const randomIndex = getRandomInt(messages.length);
+    const randomIndex = Math.floor(Math.random() * messages.length);
     const randomMessage = messages[randomIndex];
-    console.log('Random Index:', randomIndex);
-    console.log('Random Message:', randomMessage);
     speechBubble.textContent = randomMessage;
+
+    // Disable buttons when panda is shown
+    disableButtons();
     
     pandaContainer.style.display = 'flex';
     setTimeout(() => {
@@ -68,8 +85,10 @@ function showPanda(messagesArray) {
         pandaContainer.classList.remove('show');
         setTimeout(() => {
             pandaContainer.style.display = 'none';
+            // Enable buttons after panda hides
+            enableButtons();
         }, 500);
-    }, 3000);
+    }, 3000); // Panda is displayed for 3 seconds
 }
 
 function getRandomInt(max) {
