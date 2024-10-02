@@ -338,3 +338,11 @@ button:disabled:hover {
     hyphens: auto;
     margin-bottom: 1em;
 }
+
+button:disabled {
+    background-color: #ddd !important;
+    color: #999 !important;
+    cursor: not-allowed;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
