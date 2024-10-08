@@ -222,6 +222,58 @@ input[type="checkbox"] {
 /* Responsive design */
 @media (max-width: 768px) {
     body {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    label {
+        font-size: 1.8rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 1.6rem;
+        padding: 15px 30px;
+    }
+
+    .consent-label {
+        font-size: 1.3rem;
+    }
+
+    #generatedURL {
+        font-size: 1.3rem;
+    }
+
+    .speech-bubble {
+        font-size: 1.3rem;
+        max-width: 220px;
+    }
+
+    .panda-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
         font-size: 16px;
     }
 
@@ -237,23 +289,34 @@ input[type="checkbox"] {
         font-size: 2rem;
     }
 
+    label {
+        font-size: 1.5rem;
+    }
+
     input[type="text"],
     input[type="email"],
     select {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        padding: 12px;
     }
 
     button {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         padding: 12px 24px;
     }
 
     .consent-label {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     #generatedURL {
-        font-size: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .speech-bubble {
+        font-size: 1.1rem;
+        max-width: 200px;
+        padding: 12px;
     }
 
     .panda-wrapper {
@@ -261,61 +324,44 @@ input[type="checkbox"] {
         height: 150px;
     }
 
-    .speech-bubble {
-        font-size: 1rem;
-        max-width: 180px;
+    .panda-container {
+        bottom: 15px;
+        right: 15px;
     }
 }
 
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 15px;
-    }
-
+/* Extra small devices */
+@media (max-width: 360px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    label {
+        font-size: 1.3rem;
     }
 
     input[type="text"],
     input[type="email"],
     select {
-        font-size: 1rem;
-        padding: 10px;
+        font-size: 1.2rem;
     }
 
     button {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         padding: 10px 20px;
     }
 
-    .consent-label {
-        font-size: 0.9rem;
-    }
-
-    #generatedURL {
-        font-size: 0.9rem;
+    .speech-bubble {
+        font-size: 1rem;
+        max-width: 180px;
     }
 
     .panda-wrapper {
-        width: 120px;
-        height: 120px;
-    }
-
-    .speech-bubble {
-        font-size: 0.9rem;
-        max-width: 160px;
-    }
-
-    .panda-container {
-        bottom: 10px;
-        right: 10px;
+        width: 130px;
+        height: 130px;
     }
 }
