@@ -24,36 +24,16 @@ body {
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
-    line-height: 1.25;
-    font-size: 24px; /* Increased base font size */
-}
-
-/* Checkbox label styles */
-label.consent-label {
-    display: flex;
-    align-items: center;
-    font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 1em;
-    text-shadow: none;
-}
-
-/* Checkbox input styles */
-input[type="checkbox"] {
-    width: 8em;
-    height: 8em;
-    margin-right: 0.5em;
-    accent-color: #FF0000;
-    cursor: pointer;
+    line-height: 1.6;
+    font-size: 36px; /* Increased base font size */
 }
 
 /* Container */
 .container {
     max-width: 1200px; /* Increased max-width for larger screens */
-    margin: 20px auto;
+    margin: 50px auto;
     background-color: #FFD700;
-    padding: 1em;
+    padding: 2em;
     border: 0.5em solid #FF0000;
     border-radius: 2em;
     box-shadow: 0.5em 0.5em 0 #0080FF,
@@ -72,7 +52,7 @@ h1 {
     text-shadow: 
         0.05em 0.05em 0 #FFD700,
         0.1em 0.1em 0 #0080FF;
-    margin-bottom: 0.25em;
+    margin-bottom: 0.5em;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
@@ -80,17 +60,8 @@ h1 {
 h2 {
     font-size: 4rem; /* Increased */
     text-align: center;
-    margin-bottom: 0.25em;
-    color: #0080FF;
-}
-
-label {
-    display: block;
-    font-family: 'PF Playskool Pro', 'Arial Black', sans-serif;
-    font-size: 2.5rem; /* Significantly increased label font size */
-    color: #0080FF;
     margin-bottom: 0.5em;
-    text-shadow: 1px 1px 0 #FFD700;
+    color: #0080FF;
 }
 
 /* Form elements */
@@ -98,92 +69,102 @@ input[type="text"],
 input[type="email"],
 select {
     width: 100%;
-    padding: 0.25em;
-    margin-bottom: 0.25em;
-    border: 0.25em solid #0080FF; /* Blue border */
+    padding: 0.75em;
+    margin-bottom: 1em;
+    border: 0.25em solid #0080FF;
     border-radius: 1em;
-    background-color: #FFFFFF; /* White background */
-    font-size: 2.5rem;
+    background-color: #FFFFFF;
+    font-size: 4rem; /* Increased */
     color: #333;
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
-    box-shadow: inset 0.2em 0.2em 0 #FFD700; /* Yellow inner shadow */
+    box-shadow: inset 0.2em 0.2em 0 #FFD700;
     outline: none;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 select:focus {
-    border-color: #FF0000; /* Red when focused */
-    box-shadow: 0 0 0.5em #FF0000; /* Red glow */
+    border-color: #FF0000;
+    box-shadow: 0 0 0.5em #FF0000;
 }
 
 button {
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    padding: 0.25em 0.5em;
-    background-color: #FF0000; /* Red like the button */
+    padding: 0.75em 1.5em;
+    background-color: #FF0000;
     color: #fff;
-    border: 0.25em solid #FFD700; /* Yellow border */
+    border: 0.25em solid #FFD700;
     border-radius: 1em;
     cursor: pointer;
-    font-size: 2.6rem;
-    box-shadow: 0.2em 0.2em 0 #0080FF; /* Blue shadow */
+    font-size: 2.5rem; /* Increased */
+    box-shadow: 0.2em 0.2em 0 #0080FF;
     text-shadow: 0.1em 0.1em 0 #333;
     transition: all 0.3s ease;
     margin: 0.5em 0.25em;
 }
 
 button:hover {
-    background-color: #0080FF; /* Blue on hover */
+    background-color: #0080FF;
     transform: scale(1.05);
 }
 
 button.prev-btn {
-    background-color: #0080FF; /* Blue */
-    border-color: #FFD700; /* Yellow */
-    box-shadow: 0.2em 0.2em 0 #FF0000; /* Red shadow */
+    background-color: #0080FF;
+    border-color: #FFD700;
+    box-shadow: 0.2em 0.2em 0 #FF0000;
 }
 
 button.prev-btn:hover {
-    background-color: #FFD700; /* Yellow on hover */
+    background-color: #FFD700;
     color: #333;
 }
 
 /* Form Steps */
 .form-step {
-    background-color: #FFFFFF; /* White background */
-    border: 0.3em dashed #0080FF; /* Blue dashed border */
+    background-color: #FFFFFF;
+    border: 0.3em dashed #0080FF;
     border-radius: 1.5em;
-    padding: .75em;
-    margin-bottom: 1em;
+    padding: 2em;
+    margin-bottom: 2em;
     animation: pop-in 0.5s ease, float 3s ease-in-out infinite;
-}
-
-@keyframes pop-in {
-    0% { transform: scale(0.8); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
 }
 
 /* Result area */
 #result {
     text-align: center;
-    margin-top: 0.5em;
+    margin-top: 1.5em;
 }
 
 #generatedURL {
     word-wrap: break-word;
-    background-color: #FFFFFF; /* White background */
-    padding: 0.5em;
+    background-color: #FFFFFF;
+    padding: 1em;
     border-radius: 1em;
-    border: 0.3em dashed #0080FF; /* Blue dashed border */
+    border: 0.3em dashed #0080FF;
     color: #333;
-    font-size: 2.75rem;
+    font-size: 2rem; /* Increased */
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
-    box-shadow: inset 0.2em 0.2em 0 #FFD700; /* Yellow inner shadow */
+    box-shadow: inset 0.2em 0.2em 0 #FFD700;
+}
+
+/* Checkbox label styles */
+label.consent-label {
+    display: flex;
+    align-items: center;
+    font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1em;
+    text-shadow: none;
+}
+
+/* Checkbox input styles */
+input[type="checkbox"] {
+    width: 8em;
+    height: em;
+    margin-right: 0.5em;
+    accent-color: #FF0000;
+    cursor: pointer;
 }
 
 /* Panda and speech bubble styles */
@@ -203,52 +184,123 @@ button.prev-btn:hover {
 }
 
 .speech-bubble {
-    background: #FFFFFF; /* White background */
+    background: #FFFFFF;
     padding: 1em;
     border-radius: 1.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
     box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
     max-width: 20em;
     text-align: center;
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    font-size: 2.25rem;
-    color: #FF0000; /* Red text */
-    border: 0.3em solid #0080FF; /* Blue border */
+    font-size: 2.5rem; /* Increased */
+    color: #FF0000;
+    border: 0.3em solid #0080FF;
     transform: rotate(-5deg);
 }
 
 .panda-wrapper {
-    width: 18em;
-    height: 18em;
+    width: 24em; /* Increased */
+    height: 24em; /* Increased */
     overflow: hidden;
     animation: bounce 2s infinite;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
 /* Responsive design adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+    body {
+        font-size: 32px;
+    }
+    
     .container {
-        margin: 20px auto;
-        padding: 0.5em;
+        max-width: 95%;
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 5rem;
     }
 
     h2 {
-        font-size: 2.25rem;
+        font-size: 3.5rem;
     }
 
     input[type="text"],
     input[type="email"],
     select,
+    #generatedURL {
+        font-size: 1.75rem;
+    }
+
     button {
         font-size: 2rem;
+    }
+
+    .speech-bubble {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 24px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 1.5em;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    #generatedURL {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1.75rem;
+    }
+
+    .panda-wrapper {
+        width: 18em;
+        height: 18em;
+    }
+
+    .speech-bubble {
+        font-size: 1.75rem;
+        max-width: 16em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    #generatedURL {
+        font-size: 2.5rem;
+    }
+
+    button {
+        font-size: 1.5rem;
     }
 
     .panda-wrapper {
@@ -258,33 +310,6 @@ button.prev-btn:hover {
 
     .speech-bubble {
         font-size: 1.5rem;
-        max-width: 16em;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    button {
-        font-size: 2rem;
-    }
-
-    .panda-wrapper {
-        width: 12em;
-        height: 12em;
-    }
-
-    .speech-bubble {
-        font-size: 1.25rem;
         max-width: 14em;
     }
 }
