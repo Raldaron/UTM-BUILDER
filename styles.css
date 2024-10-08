@@ -1,5 +1,17 @@
-/* Import Comic Sans-like web font */
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+/* Custom Font Declarations */
+@font-face {
+    font-family: 'PF Playskool Pro Regular';
+    src: url('PFPlayskoolProRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Playskool Pro 3D';
+    src: url('PFPlayskoolPro3D.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* Reset and base styles */
 * {
@@ -9,8 +21,8 @@
 }
 
 body {
-    font-family: 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
-    background-color: #f0f4f7;
+    font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
     color: #333;
     line-height: 1.6;
 }
@@ -19,51 +31,36 @@ body {
 .container {
     max-width: 90%;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: #FFD700; /* Bright yellow like the flashlight body */
     padding: 2em;
-    border: 0.5em dashed #0073aa;
-    border-radius: 1em;
-    box-shadow: 0.3em 0.3em 0.6em rgba(0, 0, 0, 0.2);
-    background-image: url('crayon-background.png');
-    background-size: cover;
+    border: 0.5em solid #FF0000; /* Red border like the Playskool logo */
+    border-radius: 2em;
+    box-shadow: 0.5em 0.5em 0 #0080FF, /* Blue shadow */
+                inset 0.5em 0.5em 2em rgba(255, 255, 255, 0.3); /* Inner glow */
 }
 
 /* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
+    color: #FF0000; /* Red like the Playskool logo */
+}
+
 h1 {
     text-align: center;
-    color: #0073aa;
-    font-size: 3rem;
-    text-shadow: 0.05em 0.05em 0 #e7694a;
+    font-size: 4rem;
+    text-shadow: 
+        0.05em 0.05em 0 #FFD700, /* Yellow */
+        0.1em 0.1em 0 #0080FF;   /* Blue */
     margin-bottom: 1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 1em;
-}
-
-/* Ensure labels wrap long words or URLs */
-label {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    max-width: 100%;
-}
-
-.form-step label {
-    max-width: 100%;
-}
-
-/* Style for the URL example within the label */
-.url-example {
-    display: block;
-    margin-top: 0.5em;
-    font-size: 0.9em;
-    color: #555;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
+    color: #0080FF; /* Blue like the flashlight rim */
 }
 
 /* Form elements */
@@ -73,79 +70,72 @@ select {
     width: 100%;
     padding: 0.75em;
     margin-bottom: 1em;
-    border: 0.25em solid #50b5c1;
-    border-radius: 0.5em;
-    background-color: #e8f1f5;
-    font-size: 1.25rem;
+    border: 0.25em solid #0080FF; /* Blue border */
+    border-radius: 1em;
+    background-color: #FFFFFF; /* White background */
+    font-size: 1.5rem;
     color: #333;
-    box-shadow: inset 0.2em 0.2em 0 #0073aa;
+    font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
+    box-shadow: inset 0.2em 0.2em 0 #FFD700; /* Yellow inner shadow */
     outline: none;
-    font-family: inherit;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 select:focus {
-    border-color: #e7694a;
+    border-color: #FF0000; /* Red when focused */
+    box-shadow: 0 0 0.5em #FF0000; /* Red glow */
 }
 
 button {
+    font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
     padding: 0.75em 1.5em;
-    background-color: #0073aa;
+    background-color: #FF0000; /* Red like the button */
     color: #fff;
-    border: 0.25em solid #50b5c1;
-    border-radius: 0.75em;
+    border: 0.25em solid #FFD700; /* Yellow border */
+    border-radius: 1em;
     cursor: pointer;
-    font-size: 1.5rem;
-    font-family: inherit;
-    box-shadow: 0.2em 0.2em 0 #e7694a;
-    text-shadow: 0.1em 0.1em 0 #0073aa;
+    font-size: 1.75rem;
+    box-shadow: 0.2em 0.2em 0 #0080FF; /* Blue shadow */
+    text-shadow: 0.1em 0.1em 0 #333;
     transition: all 0.3s ease;
     margin: 0.5em 0.25em;
 }
 
 button:hover {
-    background-color: #50b5c1;
-    box-shadow: 0.2em 0.2em 0 #0073aa;
+    background-color: #0080FF; /* Blue on hover */
+    transform: scale(1.05);
 }
 
 button.prev-btn {
-    background-color: #f0f4f7;
-    color: #0073aa;
+    background-color: #0080FF; /* Blue */
+    border-color: #FFD700; /* Yellow */
+    box-shadow: 0.2em 0.2em 0 #FF0000; /* Red shadow */
 }
 
 button.prev-btn:hover {
-    background-color: #e7694a;
-    color: #fff;
-}
-
-button:disabled {
-    background-color: #ddd;
-    box-shadow: none;
-    cursor: not-allowed;
-}
-
-button:disabled:hover {
-    background-color: #ddd;
+    background-color: #FFD700; /* Yellow on hover */
+    color: #333;
 }
 
 /* Form Steps */
 .form-step {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    animation: pop-in 0.5s ease;
+    background-color: #FFFFFF; /* White background */
+    border: 0.3em dashed #0080FF; /* Blue dashed border */
+    border-radius: 1.5em;
+    padding: 2em;
+    margin-bottom: 2em;
+    animation: pop-in 0.5s ease, float 3s ease-in-out infinite;
 }
 
 @keyframes pop-in {
-    0% {
-        transform: scale(0.95);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 /* Result area */
@@ -156,14 +146,14 @@ button:disabled:hover {
 
 #generatedURL {
     word-wrap: break-word;
-    background-color: #e0f7fa;
+    background-color: #FFFFFF; /* White background */
     padding: 1em;
-    border-radius: 0.75em;
-    border: 0.3em dashed #0073aa;
-    color: #0073aa;
-    font-size: 1.25rem;
-    font-family: inherit;
-    box-shadow: inset 0.2em 0.2em 0 #50b5c1;
+    border-radius: 1em;
+    border: 0.3em dashed #0080FF; /* Blue dashed border */
+    color: #333;
+    font-size: 1.5rem;
+    font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
+    box-shadow: inset 0.2em 0.2em 0 #FFD700; /* Yellow inner shadow */
 }
 
 /* Panda and speech bubble styles */
@@ -176,87 +166,40 @@ button:disabled:hover {
     align-items: center;
     z-index: 1000;
     transition: transform 0.5s ease-out;
-    max-width: 90%;
 }
 
 .panda-container.show {
-    transform: translateY(-1em);
+    transform: translateY(-1em) rotate(5deg);
 }
 
 .speech-bubble {
-    background: white;
+    background: #FFFFFF; /* White background */
     padding: 1em;
-    border-radius: 1em;
+    border-radius: 1.5em;
     margin-bottom: 1em;
     box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
     max-width: 20em;
     text-align: center;
-    font-family: inherit;
-    font-size: 1.5rem;
-    color: #0073aa;
-    opacity: 0;
-    transform: scale(0);
-    transition: opacity 0.5s, transform 0.5s;
-    word-wrap: break-word;
+    font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
+    font-size: 1.75rem;
+    color: #FF0000; /* Red text */
+    border: 0.3em solid #0080FF; /* Blue border */
+    transform: rotate(-5deg);
 }
 
 .panda-wrapper {
-    width: 15em;
-    height: 15em;
+    width: 18em;
+    height: 18em;
     overflow: hidden;
-    opacity: 0;
-    transform: scale(0);
-    transition: opacity 0.5s, transform 0.5s;
+    animation: bounce 2s infinite;
 }
 
-.panda-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
-.panda-container.show .speech-bubble,
-.panda-container.show .panda-wrapper {
-    opacity: 1;
-    transform: scale(1);
-}
-
-@keyframes pandaWiggle {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    75% { transform: rotate(-5deg); }
-}
-
-.panda-container.show .panda-wrapper {
-    animation: pandaWiggle 2s infinite;
-}
-
-/* Fireworks styles */
-#fireworks {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    pointer-events: none;
-    display: none;
-}
-
-/* Consent Label */
-.consent-label {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 1em;
-}
-
-.consent-label input[type="checkbox"] {
-    margin-right: 0.5em;
-}
-
-/* Responsive design */
+/* Responsive design adjustments */
 @media (max-width: 768px) {
     .container {
         margin: 20px auto;
@@ -264,22 +207,45 @@ button:disabled:hover {
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     h2 {
-        font-size: 1.75rem;
-    }
-
-    label {
-        font-size: 1.25rem;
+        font-size: 2.25rem;
     }
 
     input[type="text"],
     input[type="email"],
     select,
     button {
-        font-size: 1.125rem;
+        font-size: 1.5rem;
+    }
+
+    .panda-wrapper {
+        width: 15em;
+        height: 15em;
+    }
+
+    .speech-bubble {
+        font-size: 1.5rem;
+        max-width: 16em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    button {
+        font-size: 1.25rem;
     }
 
     .panda-wrapper {
@@ -289,60 +255,19 @@ button:disabled:hover {
 
     .speech-bubble {
         font-size: 1.25rem;
-        max-width: 16em;
-        padding: 0.75em;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    label {
-        font-size: 1rem;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    button {
-        font-size: 1rem;
-    }
-
-    .panda-wrapper {
-        width: 10em;
-        height: 10em;
-    }
-
-    .speech-bubble {
-        font-size: 1rem;
         max-width: 14em;
-        padding: 0.5em;
     }
 }
 
-/* Style for additional instructions */
-.instruction {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 0.5em;
-}
-
-/* Style for the URL example */
-.url-example {
-    font-size: 0.9rem;
-    color: #555;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    margin-bottom: 1em;
-}
-
+/* Ensure buttons are disabled appropriately */
 button:disabled {
-    background-color: #ddd !important;
-    color: #999 !important;
+    background-color: #cccccc;
+    color: #666666;
     cursor: not-allowed;
-    box-shadow: none !important;
-    text-shadow: none !important;
+    box-shadow: none;
+}
+
+button:disabled:hover {
+    transform: none;
+    background-color: #cccccc;
 }
