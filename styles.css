@@ -13,161 +13,107 @@
     font-style: normal;
 }
 
-/* Reset and base styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* Base styles */
 body {
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
     background-color: #FFD700;
     color: #333;
     line-height: 1.6;
-    font-size: 18px;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Container */
 .container {
+    width: 95%;
     max-width: 800px;
     margin: 20px auto;
     background-color: #FFFFFF;
-    padding: 30px;
-    border: 10px solid #FF0000;
-    border-radius: 30px;
-    box-shadow: 0 0 0 10px #0080FF, 0 0 0 20px #FFD700;
+    padding: 20px;
+    border: 8px solid #FF0000;
+    border-radius: 20px;
+    box-shadow: 0 0 0 8px #0080FF;
 }
 
 /* Typography */
-h1, h2 {
+h1 {
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
     color: #FF0000;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 3.5rem;
-    text-shadow: 
-        3px 3px 0 #FFD700,
-        6px 6px 0 #0080FF;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-h2 {
     font-size: 2.5rem;
-    color: #0080FF;
+    margin-bottom: 20px;
+    text-shadow: 
+        2px 2px 0 #FFD700,
+        4px 4px 0 #0080FF;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Form elements */
 .form-step {
     background-color: #F0F0F0;
-    border: 5px solid #0080FF;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
+    border: 4px solid #0080FF;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
 }
 
 label {
     display: block;
     font-family: 'PF Playskool Pro Regular', 'Arial Black', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #FF0000;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 0 #FFD700;
+    margin-bottom: 8px;
 }
 
 input[type="text"],
 input[type="email"],
 select {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 4px solid #0080FF;
-    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 3px solid #0080FF;
+    border-radius: 10px;
     background-color: #FFFFFF;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #333;
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
-    box-shadow: inset 4px 4px 0 #FFD700;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-select:focus {
-    outline: none;
-    border-color: #FF0000;
-    box-shadow: 0 0 0 4px #FFD700;
 }
 
 button {
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    padding: 15px 30px;
+    padding: 10px 20px;
     background-color: #FF0000;
     color: #FFFFFF;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 1.5rem;
-    box-shadow: 0 5px 0 #0080FF, 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    box-shadow: 0 4px 0 #0080FF;
     transition: all 0.3s ease;
-    margin: 10px 5px;
-}
-
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 0 #0080FF, 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-button:active {
-    transform: translateY(2px);
-    box-shadow: 0 3px 0 #0080FF, 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-button.prev-btn {
-    background-color: #0080FF;
+    margin: 10px 0;
 }
 
 /* Checkbox styles */
 .consent-label {
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
 input[type="checkbox"] {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin-right: 10px;
-    accent-color: #FF0000;
-    cursor: pointer;
-}
-
-/* Result area */
-#result {
-    text-align: center;
-    margin-top: 30px;
-}
-
-#generatedURL {
-    word-wrap: break-word;
-    background-color: #F0F0F0;
-    padding: 15px;
-    border-radius: 15px;
-    border: 4px dashed #0080FF;
-    color: #333;
-    font-size: 1.2rem;
-    font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
 }
 
 /* Panda and speech bubble styles */
 .panda-container {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1em;
+    right: 1em;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -176,192 +122,89 @@ input[type="checkbox"] {
 }
 
 .panda-container.show {
-    display: flex;
-    transform: translateY(-10px) rotate(5deg);
+    transform: translateY(-1em) rotate(5deg);
 }
 
 .speech-bubble {
     background: #FFFFFF;
-    padding: 15px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 200px;
+    padding: 1em;
+    border-radius: 1.5em;
+    margin-bottom: 1em;
+    box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
+    max-width: 20em;
     text-align: center;
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    font-size: 1.2rem;
+    font-size: 2.5rem; /* Increased */
     color: #FF0000;
-    border: 3px solid #0080FF;
+    border: 0.3em solid #0080FF;
     transform: rotate(-5deg);
 }
 
 .panda-wrapper {
-    width: 200px;
-    height: 200px;
-    overflow: visible;
+    width: 24em; /* Increased */
+    height: 24em; /* Increased */
+    overflow: hidden;
     animation: bounce 2s infinite;
 }
 
-.panda-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    body {
-        font-size: 18px;
-    }
-
+/* Responsive design adjustments */
+@media (max-width: 600px) {
     .container {
-        padding: 25px;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
     }
 
     h1 {
-        font-size: 3rem;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-    }
-
-    label {
-        font-size: 1.8rem;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select {
-        font-size: 1.5rem;
-        padding: 15px;
-    }
-
-    button {
-        font-size: 1.6rem;
-        padding: 15px 30px;
-    }
-
-    .consent-label {
-        font-size: 1.3rem;
-    }
-
-    #generatedURL {
-        font-size: 1.3rem;
-    }
-
-    .speech-bubble {
-        font-size: 1.3rem;
-        max-width: 220px;
-    }
-
-    .panda-wrapper {
-        width: 180px;
-        height: 180px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 16px;
-    }
-
-    .container {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
         font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .form-step {
+        padding: 10px;
     }
 
     label {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     input[type="text"],
     input[type="email"],
     select {
-        font-size: 1.3rem;
-        padding: 12px;
+        font-size: 0.9rem;
+        padding: 8px;
     }
 
     button {
-        font-size: 1.4rem;
-        padding: 12px 24px;
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 
     .consent-label {
-        font-size: 1.1rem;
-    }
-
-    #generatedURL {
-        font-size: 1.1rem;
-    }
-
-    .speech-bubble {
-        font-size: 1.1rem;
-        max-width: 200px;
-        padding: 12px;
-    }
-
-    .panda-wrapper {
-        width: 150px;
-        height: 150px;
-    }
-
-    .panda-container {
-        bottom: 15px;
-        right: 15px;
+        font-size: 0.8rem;
     }
 }
 
 /* Extra small devices */
-@media (max-width: 360px) {
+@media (max-width: 400px) {
     h1 {
-        font-size: 2.2rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     label {
-        font-size: 1.3rem;
+        font-size: 0.9rem;
     }
 
     input[type="text"],
     input[type="email"],
     select {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
     }
 
     button {
-        font-size: 1.3rem;
-        padding: 10px 20px;
-    }
-
-    .speech-bubble {
-        font-size: 1rem;
-        max-width: 180px;
-    }
-
-    .panda-wrapper {
-        width: 130px;
-        height: 130px;
+        font-size: 0.9rem;
     }
 }
