@@ -24,7 +24,7 @@ body {
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.3;
     font-size: 36px; /* Increased base font size */
 }
 
@@ -52,7 +52,7 @@ h1 {
     text-shadow: 
         0.05em 0.05em 0 #FFD700,
         0.1em 0.1em 0 #0080FF;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
@@ -60,7 +60,7 @@ h1 {
 h2 {
     font-size: 4rem; /* Increased */
     text-align: center;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
     color: #0080FF;
 }
 
@@ -69,12 +69,12 @@ input[type="text"],
 input[type="email"],
 select {
     width: 100%;
-    padding: 0.75em;
-    margin-bottom: 1em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
     border: 0.25em solid #0080FF;
     border-radius: 1em;
     background-color: #FFFFFF;
-    font-size: 6rem; /* Increased */
+    font-size: 3rem; /* Increased */
     color: #333;
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
     box-shadow: inset 0.2em 0.2em 0 #FFD700;
@@ -100,7 +100,7 @@ button {
     box-shadow: 0.2em 0.2em 0 #0080FF;
     text-shadow: 0.1em 0.1em 0 #333;
     transition: all 0.3s ease;
-    margin: 0.5em 0.25em;
+    margin: 0.25em 0.25em;
 }
 
 button:hover {
@@ -124,8 +124,8 @@ button.prev-btn:hover {
     background-color: #FFFFFF;
     border: 0.3em dashed #0080FF;
     border-radius: 1.5em;
-    padding: 2em;
-    margin-bottom: 2em;
+    padding: 1em;
+    margin-bottom: 1em;
     animation: pop-in 0.5s ease, float 3s ease-in-out infinite;
 }
 
@@ -138,7 +138,7 @@ button.prev-btn:hover {
 #generatedURL {
     word-wrap: break-word;
     background-color: #FFFFFF;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 1em;
     border: 0.3em dashed #0080FF;
     color: #333;
@@ -154,7 +154,7 @@ label.consent-label {
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
     font-size: 1.5rem;
     color: #333;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     text-shadow: none;
 }
 
@@ -162,7 +162,7 @@ label.consent-label {
 input[type="checkbox"] {
     width: 8em;
     height: em;
-    margin-right: 0.5em;
+    margin-right: 0.25em;
     accent-color: #FF0000;
     cursor: pointer;
 }
@@ -170,8 +170,8 @@ input[type="checkbox"] {
 /* Panda and speech bubble styles */
 .panda-container {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 0.5em;
+    right: 0.5em;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -185,9 +185,9 @@ input[type="checkbox"] {
 
 .speech-bubble {
     background: #FFFFFF;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 1.5em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
     max-width: 20em;
     text-align: center;
@@ -245,8 +245,8 @@ input[type="checkbox"] {
     }
 
     .container {
-        margin: 20px auto;
-        padding: 1.5em;
+        margin: 10px auto;
+        padding: 0.75em;
     }
 
     h1 {
