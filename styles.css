@@ -15,7 +15,7 @@
 
 /* Base styles */
 body {
-    font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     background-color: #FFD700;
     color: #333;
     line-height: 1.6;
@@ -61,7 +61,7 @@ h1 {
 
 label {
     display: block;
-    font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 2rem;
     color: #FF0000;
     margin-bottom: 0.5em;
