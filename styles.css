@@ -26,11 +26,11 @@ body {
 
 /* Container */
 .container {
-    width: 95%;
+    width: 85%;
     max-width: 800px;
     margin: 20px auto;
     background-color: #FFFFFF;
-    padding: 20px;
+    padding: 5% 5%;
     border: 8px solid #FF0000;
     border-radius: 20px;
     box-shadow: 0 0 0 8px #0080FF;
@@ -41,8 +41,8 @@ h1 {
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
     color: #FF0000;
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 0.5em;
     text-shadow: 
         2px 2px 0 #FFD700,
         4px 4px 0 #0080FF;
@@ -55,65 +55,67 @@ h1 {
     background-color: #F0F0F0;
     border: 4px solid #0080FF;
     border-radius: 15px;
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 5%;
+    margin-bottom: 5%;
 }
 
 label {
     display: block;
-    font-family: 'PF Playskool Pro Regular', 'Arial Black', sans-serif;
-    font-size: 1.2rem;
+    font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
+    font-size: 1.5rem;
     color: #FF0000;
-    margin-bottom: 8px;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px 0 #FFD700;
 }
 
 input[type="text"],
 input[type="email"],
 select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 0.8em;
+    margin-bottom: 1em;
     border: 3px solid #0080FF;
     border-radius: 10px;
     background-color: #FFFFFF;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #333;
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 button {
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    padding: 10px 20px;
+    padding: 0.8em 1.5em;
     background-color: #FF0000;
     color: #FFFFFF;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     box-shadow: 0 4px 0 #0080FF;
     transition: all 0.3s ease;
-    margin: 10px 0;
+    margin: 0.5em 0;
 }
 
 /* Checkbox styles */
 .consent-label {
     display: flex;
     align-items: center;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+    margin-bottom: 1em;
 }
 
 input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.5em;
 }
 
 /* Panda and speech bubble styles */
 .panda-container {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 2%;
+    right: 2%;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -122,7 +124,8 @@ input[type="checkbox"] {
 }
 
 .panda-container.show {
-    transform: translateY(-1em) rotate(5deg);
+    display: flex;
+    transform: translateY(-5%) rotate(5deg);
 }
 
 .speech-bubble {
@@ -131,24 +134,39 @@ input[type="checkbox"] {
     border-radius: 1.5em;
     margin-bottom: 1em;
     box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
-    max-width: 20em;
+    max-width: 80%;
     text-align: center;
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    font-size: 2.5rem; /* Increased */
+    font-size: 1.2rem;
     color: #FF0000;
     border: 0.3em solid #0080FF;
     transform: rotate(-5deg);
 }
 
 .panda-wrapper {
-    width: 24em; /* Increased */
-    height: 24em; /* Increased */
-    overflow: hidden;
-    animation: bounce 2s infinite;
+    width: 30%;
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
+    overflow: visible;
+}
+
+.panda-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 /* Responsive design adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
     .container {
         width: 100%;
         margin: 0;
@@ -156,55 +174,74 @@ input[type="checkbox"] {
         border-left: none;
         border-right: none;
         box-shadow: none;
+        padding: 5% 3%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    label {
+        font-size: 1.3rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+        font-size: 1.1rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+
+    .consent-label {
+        font-size: 1rem;
+    }
+
+    .speech-bubble {
+        font-size: 1rem;
+    }
+
+    .panda-wrapper {
+        width: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
     }
 
     h1 {
         font-size: 2rem;
-        margin-bottom: 15px;
-    }
-
-    .form-step {
-        padding: 10px;
     }
 
     label {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     input[type="text"],
     input[type="email"],
     select {
-        font-size: 0.9rem;
-        padding: 8px;
+        font-size: 1rem;
+        padding: 0.6em;
     }
 
     button {
-        font-size: 1rem;
-        padding: 8px 16px;
+        font-size: 1.1rem;
+        padding: 0.6em 1.2em;
     }
 
     .consent-label {
-        font-size: 0.8rem;
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 400px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    label {
         font-size: 0.9rem;
     }
 
-    input[type="text"],
-    input[type="email"],
-    select {
-        font-size: 0.8rem;
+    .speech-bubble {
+        font-size: 0.9rem;
     }
 
-    button {
-        font-size: 0.9rem;
+    .panda-wrapper {
+        width: 50%;
     }
 }
