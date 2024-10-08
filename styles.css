@@ -28,6 +28,26 @@ body {
     font-size: 24px; /* Increased base font size */
 }
 
+/* Checkbox label styles */
+label.consent-label {
+    display: flex;
+    align-items: center;
+    font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1em;
+    text-shadow: none;
+}
+
+/* Checkbox input styles */
+input[type="checkbox"] {
+    width: 8em;
+    height: 8em;
+    margin-right: 0.5em;
+    accent-color: #FF0000;
+    cursor: pointer;
+}
+
 /* Container */
 .container {
     max-width: 1200px; /* Increased max-width for larger screens */
