@@ -57,7 +57,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 1em;
     color: #0080FF; /* Blue like the flashlight rim */
@@ -73,7 +73,7 @@ select {
     border: 0.25em solid #0080FF; /* Blue border */
     border-radius: 1em;
     background-color: #FFFFFF; /* White background */
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: #333;
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
     box-shadow: inset 0.2em 0.2em 0 #FFD700; /* Yellow inner shadow */
@@ -95,7 +95,7 @@ button {
     border: 0.25em solid #FFD700; /* Yellow border */
     border-radius: 1em;
     cursor: pointer;
-    font-size: 1.75rem;
+    font-size: 2.6rem;
     box-shadow: 0.2em 0.2em 0 #0080FF; /* Blue shadow */
     text-shadow: 0.1em 0.1em 0 #333;
     transition: all 0.3s ease;
@@ -151,7 +151,7 @@ button.prev-btn:hover {
     border-radius: 1em;
     border: 0.3em dashed #0080FF; /* Blue dashed border */
     color: #333;
-    font-size: 1.5rem;
+    font-size: 2.75rem;
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
     box-shadow: inset 0.2em 0.2em 0 #FFD700; /* Yellow inner shadow */
 }
@@ -181,7 +181,7 @@ button.prev-btn:hover {
     max-width: 20em;
     text-align: center;
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     color: #FF0000; /* Red text */
     border: 0.3em solid #0080FF; /* Blue border */
     transform: rotate(-5deg);
