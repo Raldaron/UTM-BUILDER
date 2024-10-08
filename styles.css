@@ -17,16 +17,32 @@ body {
     padding: 0;
 }
 
-/* Container */
 .container {
-    width: 95%;
+    width: 85%;
     max-width: 800px;
     margin: 20px auto;
     background-color: #FFFFFF;
     padding: 5% 5%;
-    border: 8px solid #FF0000;
+    border: 8px dashed #FF0000;
     border-radius: 20px;
-    box-shadow: 0 0 0 8px #0080FF;
+    box-shadow: 
+        0 0 0 8px #0080FF,
+        0 0 20px rgba(0, 0, 0, 0.1),
+        inset 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    width: 85%;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 4px dashed #FFD700;
+    border-radius: 24px;
+    z-index: -1;
 }
 
 /* Typography */
@@ -160,7 +176,7 @@ input[type="checkbox"] {
     }
 
     .container {
-        width: 100%;
+        width: 80%;
         margin: 0;
         border-radius: 0;
         border-left: none;
