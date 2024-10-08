@@ -1,40 +1,40 @@
 /* Custom Font Declarations */
 @font-face {
-    font-family: 'PF Playskool Pro 3D';
-    src: url('PFPlayskoolPro3D.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "PF Playskool Pro 3D";
+  src: url("PFPlayskoolPro3D.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Base styles */
 body {
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-    background-color: #FFD700;
-    color: #333;
-    line-height: 1.6;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  background-color: #ffd700;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
+/* Container */
 .container {
     width: 85%;
     max-width: 800px;
     margin: 20px auto;
     background-color: #FFFFFF;
-    padding: 5% 5%;
+    padding: 5%;
     border: 8px dashed #FF0000;
     border-radius: 20px;
     box-shadow: 
-        0 0 0 8px #0080FF,
-        0 0 20px rgba(0, 0, 0, 0.1),
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        0 15px 50px rgba(0, 128, 255, 0.3),
         inset 0 0 20px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
 .container::before {
     content: '';
-    width: 85%;
     position: absolute;
     top: -4px;
     left: -4px;
@@ -47,209 +47,224 @@ body {
 
 /* Typography */
 h1 {
-    font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    color: #FF0000;
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 0.5em;
-    text-shadow: 
-        2px 2px 0 #FFD700,
-        4px 4px 0 #0080FF;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  font-family: "PF Playskool Pro 3D", "Arial Black", sans-serif;
+  color: #ff0000;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+  text-shadow:
+    2px 2px 0 #ffd700,
+    4px 4px 0 #0080ff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* Form elements */
 .form-step {
-    background-color: #F0F0F0;
-    border: 4px solid #0080FF;
-    border-radius: 15px;
-    padding: 5%;
-    margin-bottom: 5%;
+  background-color: #f0f0f0;
+  border: 4px solid #0080ff;
+  border-radius: 15px;
+  padding: 5%;
+  margin-bottom: 5%;
 }
 
 label {
-    display: block;
-    font-size: 1.5rem;
-    color: #FF0000;
-    margin-bottom: 0.5em;
-    text-shadow: 1px 1px 0 #FFD700;
-    font-weight: bold;
+  display: block;
+  font-size: 1.5rem;
+  color: #ff0000;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 0 #ffd700;
+  font-weight: bold;
 }
 
 input[type="text"],
 input[type="email"],
 select {
-    width: 100%;
-    padding: 0.8em;
-    margin-bottom: 1em;
-    border: 3px solid #0080FF;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    font-size: 1.2rem;
-    color: #333;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-    box-sizing: border-box;
+  width: 85%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 3px solid #0080ff;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-size: 1.2rem;
+  color: #333;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  box-sizing: border-box;
 }
 
 button {
-    padding: 0.8em 1.5em;
-    background-color: #FF0000;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1.3rem;
-    font-weight: bold;
-    box-shadow: 0 4px 0 #0080FF;
-    transition: all 0.3s ease;
-    margin: 0.5em 0;
+  padding: 0.8em 1.5em;
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 4px 0 #0080ff;
+  transition: all 0.3s ease;
+  margin: 0.5em 0;
 }
 
 /* Checkbox styles */
 .consent-label {
-    display: flex;
-    align-items: center;
-    font-size: 1.1rem;
-    margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 1em;
 }
 
 input[type="checkbox"] {
-    width: 1.5em;
-    height: 1.5em;
-    margin-right: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
 }
 
 /* Panda and speech bubble styles */
 .panda-container {
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1000;
-    transition: transform 0.5s ease-out;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.5s ease-out;
 }
 
 .panda-container.show {
-    display: flex;
-    transform: translateY(-5%) rotate(5deg);
+  display: flex;
+  transform: translateY(-5%) rotate(5deg);
 }
 
 .speech-bubble {
-    background: #FFFFFF;
-    padding: 1em;
-    border-radius: 1.5em;
-    margin-bottom: 1em;
-    box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
-    max-width: 80%;
-    text-align: center;
-    font-size: 1.8rem;
-    color: #FF0000;
-    border: 0.3em solid #0080FF;
-    transform: rotate(-5deg);
+  background: #ffffff;
+  padding: 1em;
+  border-radius: 1.5em;
+  margin-bottom: 1em;
+  box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #ff0000;
+  border: 0.3em solid #0080ff;
+  transform: rotate(-5deg);
 }
 
 .panda-wrapper {
-    width: 30%;
-    max-width: 200px;
-    aspect-ratio: 1 / 1;
-    overflow: visible;
+  width: 30%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
 }
 
 .panda-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
+  body {
+    font-size: 14px;
+  }
 
-    .container {
-        width: 80%;
-        margin: 0;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        box-shadow: none;
-        padding: 5% 3%;
-    }
+  .container {
+    width: 85%;
+    margin: 20px auto;
+    border-radius: 20px;
+    border: 8px dashed #ff0000;
+    box-shadow:
+      0 5px 15px rgba(0, 0, 0, 0.1),
+      0 8px 25px rgba(0, 128, 255, 0.2),
+      inset 0 0 15px rgba(0, 0, 0, 0.1);
+  }
 
-    h1 {
-        font-size: 2.5rem;
-    }
+  .container::before {
+    display: block; /* Re-enable the yellow dashed border */
+  }
 
-    label {
-        font-size: 1.3rem;
-    }
+  h1 {
+    font-size: 2.5rem;
+  }
 
-    input[type="text"],
-    input[type="email"],
-    select {
-        font-size: 1.1rem;
-    }
+  label {
+    font-size: 1.3rem;
+  }
 
-    button {
-        font-size: 1.2rem;
-    }
+  input[type="text"],
+  input[type="email"],
+  select {
+    font-size: 1.1rem;
+  }
 
-    .consent-label {
-        font-size: 1rem;
-    }
+  button {
+    font-size: 1.2rem;
+  }
 
-    .speech-bubble {
-        font-size: 1.6rem;
-    }
+  .consent-label {
+    font-size: 1rem;
+  }
 
-    .panda-wrapper {
-        width: 40%;
-    }
+  .speech-bubble {
+    font-size: 1.6rem;
+  }
+
+  .panda-wrapper {
+    width: 40%;
+  }
 }
 
 @media (max-width: 480px) {
-    body {
-        font-size: 12px;
-    }
+  .container {
+    width: 90%;
+    padding: 7%;
+  }
 
-    h1 {
-        font-size: 2rem;
-    }
+  body {
+    font-size: 12px;
+  }
 
-    label {
-        font-size: 1.2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    input[type="text"],
-    input[type="email"],
-    select {
-        font-size: 1rem;
-        padding: 0.6em;
-    }
+  label {
+    font-size: 1.2rem;
+  }
 
-    button {
-        font-size: 1.1rem;
-        padding: 0.6em 1.2em;
-    }
+  input[type="text"],
+  input[type="email"],
+  select {
+    font-size: 1rem;
+    padding: 0.6em;
+  }
 
-    .consent-label {
-        font-size: 0.9rem;
-    }
+  button {
+    font-size: 1.1rem;
+    padding: 0.6em 1.2em;
+  }
 
-    .speech-bubble {
-        font-size: 1.4rem;
-    }
+  .consent-label {
+    font-size: 0.9rem;
+  }
 
-    .panda-wrapper {
-        width: 50%;
-    }
+  .speech-bubble {
+    font-size: 1.4rem;
+  }
+
+  .panda-wrapper {
+    width: 50%;
+  }
 }
