@@ -88,7 +88,7 @@ function showPanda(messagesArray) {
             // Enable buttons after panda hides
             enableButtons();
         }, 500);
-    }, 3000); // Panda is displayed for 3 seconds
+    }, 2000); // Panda is displayed for 3 seconds
 }
 
 function getRandomInt(max) {
