@@ -22,156 +22,152 @@
 
 body {
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #FFD700;
     color: #333;
-    line-height: 1.3;
-    font-size: 36px; /* Increased base font size */
+    line-height: 1.6;
+    font-size: 18px;
 }
 
 /* Container */
 .container {
-    max-width: 1200px; /* Increased max-width for larger screens */
-    margin: 50px auto;
-    background-color: #FFD700;
-    padding: 2em;
-    border: 0.5em solid #FF0000;
-    border-radius: 2em;
-    box-shadow: 0.5em 0.5em 0 #0080FF,
-                inset 0.5em 0.5em 2em rgba(255, 255, 255, 0.3);
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border: 10px solid #FF0000;
+    border-radius: 30px;
+    box-shadow: 0 0 0 10px #0080FF, 0 0 0 20px #FFD700;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
     color: #FF0000;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 6rem; /* Significantly increased */
+    font-size: 3.5rem;
     text-shadow: 
-        0.05em 0.05em 0 #FFD700,
-        0.1em 0.1em 0 #0080FF;
-    margin-bottom: 0.25em;
-    letter-spacing: 0.05em;
+        3px 3px 0 #FFD700,
+        6px 6px 0 #0080FF;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 4rem; /* Increased */
-    text-align: center;
-    margin-bottom: 0.25em;
+    font-size: 2.5rem;
     color: #0080FF;
 }
 
 /* Form elements */
+.form-step {
+    background-color: #F0F0F0;
+    border: 5px solid #0080FF;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-family: 'PF Playskool Pro Regular', 'Arial Black', sans-serif;
+    font-size: 1.5rem;
+    color: #FF0000;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0 #FFD700;
+}
+
 input[type="text"],
 input[type="email"],
 select {
     width: 100%;
-    padding: 0.5em;
-    margin-bottom: 0.5em;
-    border: 0.25em solid #0080FF;
-    border-radius: 1em;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 4px solid #0080FF;
+    border-radius: 15px;
     background-color: #FFFFFF;
-    font-size: 3rem; /* Increased */
+    font-size: 1.3rem;
     color: #333;
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
-    box-shadow: inset 0.2em 0.2em 0 #FFD700;
-    outline: none;
+    box-shadow: inset 4px 4px 0 #FFD700;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 select:focus {
+    outline: none;
     border-color: #FF0000;
-    box-shadow: 0 0 0.5em #FF0000;
+    box-shadow: 0 0 0 4px #FFD700;
 }
 
 button {
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    padding: 0.75em 1.5em;
+    padding: 15px 30px;
     background-color: #FF0000;
-    color: #fff;
-    border: 0.25em solid #FFD700;
-    border-radius: 1em;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 15px;
     cursor: pointer;
-    font-size: 2.5rem; /* Increased */
-    box-shadow: 0.2em 0.2em 0 #0080FF;
-    text-shadow: 0.1em 0.1em 0 #333;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 0 #0080FF, 0 5px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    margin: 0.25em 0.25em;
+    margin: 10px 5px;
 }
 
 button:hover {
-    background-color: #0080FF;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #0080FF, 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #0080FF, 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 button.prev-btn {
     background-color: #0080FF;
-    border-color: #FFD700;
-    box-shadow: 0.2em 0.2em 0 #FF0000;
 }
 
-button.prev-btn:hover {
-    background-color: #FFD700;
-    color: #333;
+/* Checkbox styles */
+.consent-label {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
-/* Form Steps */
-.form-step {
-    background-color: #FFFFFF;
-    border: 0.3em dashed #0080FF;
-    border-radius: 1.5em;
-    padding: 1em;
-    margin-bottom: 1em;
-    animation: pop-in 0.5s ease, float 3s ease-in-out infinite;
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    accent-color: #FF0000;
+    cursor: pointer;
 }
 
 /* Result area */
 #result {
     text-align: center;
-    margin-top: 1.5em;
+    margin-top: 30px;
 }
 
 #generatedURL {
     word-wrap: break-word;
-    background-color: #FFFFFF;
-    padding: 0.5em;
-    border-radius: 1em;
-    border: 0.3em dashed #0080FF;
+    background-color: #F0F0F0;
+    padding: 15px;
+    border-radius: 15px;
+    border: 4px dashed #0080FF;
     color: #333;
-    font-size: 2rem; /* Increased */
+    font-size: 1.2rem;
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
-    box-shadow: inset 0.2em 0.2em 0 #FFD700;
-}
-
-/* Checkbox label styles */
-label.consent-label {
-    display: flex;
-    align-items: center;
-    font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 0.5em;
-    text-shadow: none;
-}
-
-/* Checkbox input styles */
-input[type="checkbox"] {
-    width: 8em;
-    height: em;
-    margin-right: 0.25em;
-    accent-color: #FF0000;
-    cursor: pointer;
 }
 
 /* Panda and speech bubble styles */
 .panda-container {
     position: fixed;
-    bottom: 0.5em;
-    right: 0.5em;
+    bottom: 20px;
+    right: 20px;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -180,149 +176,128 @@ input[type="checkbox"] {
 }
 
 .panda-container.show {
-    transform: translateY(-1em) rotate(5deg);
+    transform: translateY(-10px) rotate(5deg);
 }
 
 .speech-bubble {
     background: #FFFFFF;
-    padding: 0.5em;
-    border-radius: 1.5em;
-    margin-bottom: 0.5em;
-    box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
-    max-width: 20em;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
     text-align: center;
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    font-size: 2.5rem; /* Increased */
+    font-size: 1.2rem;
     color: #FF0000;
-    border: 0.3em solid #0080FF;
+    border: 3px solid #0080FF;
     transform: rotate(-5deg);
 }
 
 .panda-wrapper {
-    width: 24em; /* Increased */
-    height: 24em; /* Increased */
+    width: 150px;
+    height: 150px;
     overflow: hidden;
     animation: bounce 2s infinite;
 }
 
-/* Responsive design adjustments */
-@media (max-width: 1200px) {
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
     body {
-        font-size: 32px;
+        font-size: 16px;
     }
-    
+
     .container {
-        max-width: 95%;
+        padding: 20px;
     }
 
     h1 {
-        font-size: 5rem;
+        font-size: 2.5rem;
     }
 
     h2 {
-        font-size: 3.5rem;
+        font-size: 2rem;
     }
 
     input[type="text"],
     input[type="email"],
-    select,
-    #generatedURL {
-        font-size: 1.75rem;
+    select {
+        font-size: 1.1rem;
     }
 
     button {
-        font-size: 2rem;
+        font-size: 1.3rem;
+        padding: 12px 24px;
+    }
+
+    .consent-label {
+        font-size: 1rem;
+    }
+
+    #generatedURL {
+        font-size: 1rem;
     }
 
     .speech-bubble {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        font-size: 24px;
-    }
-
-    .container {
-        margin: 10px auto;
-        padding: 0.75em;
-    }
-
-    h1 {
-        font-size: 4rem;
-    }
-
-    h2 {
-        font-size: 3rem;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    #generatedURL {
-        font-size: 1.5rem;
-    }
-
-    button {
-        font-size: 1.75rem;
+        font-size: 1rem;
+        max-width: 180px;
     }
 
     .panda-wrapper {
-        width: 18em;
-        height: 18em;
-    }
-
-    .speech-bubble {
-        font-size: 1.75rem;
-        max-width: 16em;
+        width: 120px;
+        height: 120px;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 24px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 15px;
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     h2 {
-        font-size: 3.5rem;
+        font-size: 1.5rem;
     }
 
     input[type="text"],
     input[type="email"],
-    select,
-    #generatedURL {
-        font-size: 2.5rem;
+    select {
+        font-size: 1rem;
+        padding: 10px;
     }
 
     button {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        padding: 10px 20px;
     }
 
-    .panda-wrapper {
-        width: 15em;
-        height: 15em;
+    .consent-label {
+        font-size: 0.9rem;
+    }
+
+    #generatedURL {
+        font-size: 0.9rem;
     }
 
     .speech-bubble {
-        font-size: 1.5rem;
-        max-width: 14em;
+        font-size: 0.9rem;
+        max-width: 160px;
     }
-}
 
-/* Ensure buttons are disabled appropriately */
-button:disabled {
-    background-color: #cccccc;
-    color: #666666;
-    cursor: not-allowed;
-    box-shadow: none;
-}
-
-button:disabled:hover {
-    transform: none;
-    background-color: #cccccc;
+    .panda-wrapper {
+        width: 100px;
+        height: 100px;
+    }
 }
