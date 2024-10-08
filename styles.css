@@ -64,6 +64,15 @@ h2 {
     color: #0080FF;
 }
 
+label {
+    display: block;
+    font-family: 'PF Playskool Pro', 'Arial Black', sans-serif;
+    font-size: 2.5rem; /* Significantly increased label font size */
+    color: #0080FF;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px 0 #FFD700;
+}
+
 /* Form elements */
 input[type="text"],
 input[type="email"],
