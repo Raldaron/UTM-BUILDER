@@ -22,45 +22,46 @@
 
 body {
     font-family: 'PF Playskool Pro Regular', Arial, sans-serif;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #f0f0f0;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.25;
+    font-size: 24px; /* Increased base font size */
 }
 
 /* Container */
 .container {
-    max-width: 90%;
-    margin: 50px auto;
-    background-color: #FFD700; /* Bright yellow like the flashlight body */
-    padding: 2em;
-    border: 0.5em solid #FF0000; /* Red border like the Playskool logo */
+    max-width: 1200px; /* Increased max-width for larger screens */
+    margin: 20px auto;
+    background-color: #FFD700;
+    padding: 1em;
+    border: 0.5em solid #FF0000;
     border-radius: 2em;
-    box-shadow: 0.5em 0.5em 0 #0080FF, /* Blue shadow */
-                inset 0.5em 0.5em 2em rgba(255, 255, 255, 0.3); /* Inner glow */
+    box-shadow: 0.5em 0.5em 0 #0080FF,
+                inset 0.5em 0.5em 2em rgba(255, 255, 255, 0.3);
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    color: #FF0000; /* Red like the Playskool logo */
+    color: #FF0000;
 }
 
 h1 {
     text-align: center;
-    font-size: 4rem;
+    font-size: 6rem; /* Significantly increased */
     text-shadow: 
-        0.05em 0.05em 0 #FFD700, /* Yellow */
-        0.1em 0.1em 0 #0080FF;   /* Blue */
-    margin-bottom: 1em;
+        0.05em 0.05em 0 #FFD700,
+        0.1em 0.1em 0 #0080FF;
+    margin-bottom: 0.25em;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 4rem; /* Increased */
     text-align: center;
-    margin-bottom: 1em;
-    color: #0080FF; /* Blue like the flashlight rim */
+    margin-bottom: 0.25em;
+    color: #0080FF;
 }
 
 /* Form elements */
@@ -68,8 +69,8 @@ input[type="text"],
 input[type="email"],
 select {
     width: 100%;
-    padding: 0.75em;
-    margin-bottom: 1em;
+    padding: 0.25em;
+    margin-bottom: 0.25em;
     border: 0.25em solid #0080FF; /* Blue border */
     border-radius: 1em;
     background-color: #FFFFFF; /* White background */
@@ -89,7 +90,7 @@ select:focus {
 
 button {
     font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
-    padding: 0.75em 1.5em;
+    padding: 0.25em 0.5em;
     background-color: #FF0000; /* Red like the button */
     color: #fff;
     border: 0.25em solid #FFD700; /* Yellow border */
@@ -123,8 +124,8 @@ button.prev-btn:hover {
     background-color: #FFFFFF; /* White background */
     border: 0.3em dashed #0080FF; /* Blue dashed border */
     border-radius: 1.5em;
-    padding: 2em;
-    margin-bottom: 2em;
+    padding: .75em;
+    margin-bottom: 1em;
     animation: pop-in 0.5s ease, float 3s ease-in-out infinite;
 }
 
@@ -141,13 +142,13 @@ button.prev-btn:hover {
 /* Result area */
 #result {
     text-align: center;
-    margin-top: 1.5em;
+    margin-top: 0.5em;
 }
 
 #generatedURL {
     word-wrap: break-word;
     background-color: #FFFFFF; /* White background */
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 1em;
     border: 0.3em dashed #0080FF; /* Blue dashed border */
     color: #333;
@@ -176,7 +177,7 @@ button.prev-btn:hover {
     background: #FFFFFF; /* White background */
     padding: 1em;
     border-radius: 1.5em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
     max-width: 20em;
     text-align: center;
@@ -203,7 +204,7 @@ button.prev-btn:hover {
 @media (max-width: 768px) {
     .container {
         margin: 20px auto;
-        padding: 1.5em;
+        padding: 0.5em;
     }
 
     h1 {
