@@ -1,3 +1,4 @@
+/* Custom Font Declarations */
 @font-face {
     font-family: 'PF Playskool Pro 3D';
     src: url('PFPlayskoolPro3D.ttf') format('truetype');
@@ -53,11 +54,11 @@ h1 {
 
 label {
     display: block;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #FF0000;
     margin-bottom: 0.5em;
     text-shadow: 1px 1px 0 #FFD700;
+    font-weight: bold;
 }
 
 input[type="text"],
@@ -76,7 +77,6 @@ select {
 }
 
 button {
-    font-family: 'PF Playskool Pro 3D', 'Arial Black', sans-serif;
     padding: 0.8em 1.5em;
     background-color: #FF0000;
     color: #FFFFFF;
@@ -84,6 +84,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     font-size: 1.3rem;
+    font-weight: bold;
     box-shadow: 0 4px 0 #0080FF;
     transition: all 0.3s ease;
     margin: 0.5em 0;
@@ -93,8 +94,7 @@ button {
 .consent-label {
     display: flex;
     align-items: center;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-    font-size: 1.8rem;
+    font-size: 1.1rem;
     margin-bottom: 1em;
 }
 
@@ -129,7 +129,6 @@ input[type="checkbox"] {
     box-shadow: 0 0.25em 0.6em rgba(0, 0, 0, 0.2);
     max-width: 80%;
     text-align: center;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-size: 1.8rem;
     color: #FF0000;
     border: 0.3em solid #0080FF;
@@ -175,14 +174,13 @@ input[type="checkbox"] {
     }
 
     label {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
 
     input[type="text"],
     input[type="email"],
     select {
-        font-size: 1.8rem;
-        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+        font-size: 1.1rem;
     }
 
     button {
@@ -190,7 +188,7 @@ input[type="checkbox"] {
     }
 
     .consent-label {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     .speech-bubble {
@@ -212,7 +210,7 @@ input[type="checkbox"] {
     }
 
     label {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
 
     input[type="text"],
@@ -220,7 +218,6 @@ input[type="checkbox"] {
     select {
         font-size: 1rem;
         padding: 0.6em;
-        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     }
 
     button {
@@ -229,7 +226,7 @@ input[type="checkbox"] {
     }
 
     .consent-label {
-        font-size: 1.4rem;
+        font-size: 0.9rem;
     }
 
     .speech-bubble {
