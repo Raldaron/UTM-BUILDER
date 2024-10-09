@@ -33,7 +33,7 @@ const backButtonMessages = [
     "No worries, mistakes happen!",
     "Backtracking is part of the journey!",
     "Well, well, well... Look who made a mistake. Don't worry, I won't tell. Promise.",
-    "Winners don't make mistakes..."
+    "Winners don't make mistakes...", 
     "Oh no! You made a mistake, but that's okay! That's why there's a back button!"
 ];
 
